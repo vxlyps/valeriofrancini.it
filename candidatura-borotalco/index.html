@@ -39,12 +39,19 @@
       padding-right: 5vw;
     }
 
-    /* Sticky header */
+    /* Sticky header + allineamento centrato verticalmente */
     .portfolio-header-vf {
       position: sticky;
       top: 0;
       z-index: 100;
       background: var(--bg-color);
+      align-items: center !important;
+      padding-top: 0.6rem !important;
+      padding-bottom: 0.6rem !important;
+    }
+    /* Rimuovi padding-top extra sul nav quando è centrato */
+    .portfolio-header-vf .portfolio-nav-vf {
+      padding-top: 0 !important;
     }
 
     /* =============================================
@@ -97,6 +104,15 @@
     .s-byline { margin-bottom: 6px; }
     .s-author { letter-spacing: 1px; margin-bottom: 30px; }
     .s-submitted { color: #555; margin-top: 10px; }
+    .s-submitted-logo {
+      display: inline-block;
+      height: 18px;
+      width: auto;
+      vertical-align: middle;
+      margin-left: 8px;
+      margin-top: -2px;
+      opacity: 0.75;
+    }
 
     .s-meta-bottom {
       display: flex;
@@ -344,7 +360,7 @@
             <div class="s-title">//CANDIDATURA</div>
             <div class="s-byline">Written and Directed by</div>
             <div class="s-author">Valerio Francini</div>
-            <div class="s-submitted">submitted to: <strong>Borotalco TV</strong></div>
+            <div class="s-submitted">submitted to: <strong>Borotalco TV</strong><img src="/images/borotalco-logo.png" alt="Borotalco TV" class="s-submitted-logo"></div>
           </div>
 
           <div class="s-meta-bottom">
@@ -355,7 +371,7 @@
             <div class="s-meta-right">
               Draft #01<br>
               <del>draft #77</del><br>
-              Roma, 2025
+              Roma, 2026
             </div>
           </div>
 
@@ -491,7 +507,7 @@
     <!-- FOOTER DEL SITO -->
     <footer class="portfolio-footer-vf" id="footer-vf">
       <div class="footer-content-vf">
-        <span class="copyright-vf">©2025 valeriofrancini.it #goveg ⭐️🧑🏼‍💻🦈</span>
+        <span class="copyright-vf">©2026 valeriofrancini.it #goveg ⭐️🧑🏼‍💻🦈</span>
         <div class="footer-links-vf" id="footer-links-target-vf">
           <a href="mailto:vxly.ps@gmail.com">EMAIL ↗</a>
           <span>·</span>
