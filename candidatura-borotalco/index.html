@@ -214,6 +214,7 @@
       padding-top: 16px;
       border-top: 1px dashed #ccc;
       max-width: 860px;
+      text-align: left; /* override parent centering */
     }
     .s-full-credits summary {
       font-style: italic;
@@ -271,12 +272,13 @@
     /* --- Video nel copione --- */
     .s-video-label {
       font-style: italic;
-      color: #666;
+      color: #555;
       margin: 30px 0 16px;
       font-size: 0.9em;
+      text-align: center;
     }
     .s-video-item {
-      margin-bottom: 48px;
+      margin: 0 auto 48px;
       max-width: 860px;
     }
     .s-video-wrapper {
@@ -292,14 +294,46 @@
     }
     .s-video-meta {
       font-size: 0.85em;
-      color: #555;
+      color: #333;
       margin-top: 10px;
       line-height: 1.7;
+      text-align: center;
     }
     .s-video-meta strong { color: #111; display: block; }
     .s-video-meta .s-credits-list {
       margin-top: 6px;
-      color: #666;
+      color: #444;
+    }
+
+    /* --- Awards display --- */
+    .s-awards-row {
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+      justify-content: center;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .s-award-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: opacity 0.3s;
+      max-width: 110px;
+      text-align: center;
+    }
+    .s-award-item:hover { opacity: 0.6; }
+    .s-award-img {
+      height: 56px;
+      width: auto;
+      filter: invert(1); /* sempre scuro su sfondo bianco copione */
+    }
+    .s-award-label {
+      font-size: 0.66em;
+      line-height: 1.3;
+      color: #444;
     }
 
     /* --- About + foto nel copione --- */
@@ -518,9 +552,22 @@
               <div class="s-video-meta">
                 <strong>MASKARA — Ycon Ydol (2025)</strong>
                 <span class="s-credits-list">
-                  Regia: Valerio Francini &amp; Davide Paganelli · Formato: 16mm + Super8<br>
-                  ↳ Europe Music Video Award · Toronto Independent MV Award · Tokyo International Short Film Festival
+                  Regia: Valerio Francini &amp; Davide Paganelli · 16mm + Super8
                 </span>
+                <div class="s-awards-row">
+                  <a href="https://www.emusicawards.eu/winners/" target="_blank" rel="noopener" class="s-award-item" title="Europe Music Video Award">
+                    <img src="/images/europe-mv-award-crown.png" alt="Europe Music Video Award" class="s-award-img">
+                    <span class="s-award-label">Europe Music Video Award</span>
+                  </a>
+                  <a href="https://timvf.ca/" target="_blank" rel="noopener" class="s-award-item" title="Toronto Independent MV Award">
+                    <img src="/images/toronto-mv-award-crown.png" alt="Toronto IMVA" class="s-award-img">
+                    <span class="s-award-label">Toronto Independent MV Award</span>
+                  </a>
+                  <a href="https://www.tokyoshortfilmfest.com/post/maskara-yconydol-valerio-francini-davide-paganelli" target="_blank" rel="noopener" class="s-award-item" title="Tokyo International Short Film Festival">
+                    <img src="/images/TISFF.png" alt="TISFF" class="s-award-img">
+                    <span class="s-award-label">Tokyo Int'l Short Film Festival</span>
+                  </a>
+                </div>
                 <a href="https://www.imdb.com/it/title/tt41511262/" target="_blank" rel="noopener" title="MASKARA su IMDb" class="s-imdb-badge">
                   <span class="s-imdb-text">IMDb</span>
                 </a>
