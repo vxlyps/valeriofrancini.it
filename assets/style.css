@@ -187,22 +187,15 @@ main { flex: 1 0 auto; width: 100%; }
     transition: opacity 0.3s;
     filter: var(--icon-filter);
 }
-/* Real IMDb SVG logo — Wikimedia Commons, no hotlink restrictions */
+/* Real IMDb SVG logo — size set inline per context to override SVG natural dimensions */
 .imdb-logo-real {
     display: inline-block;
-    height: 22px;
     width: auto;
     filter: none !important;
     vertical-align: middle;
     transition: opacity 0.3s;
 }
 .imdb-logo-real:hover { opacity: 0.8; }
-/* Scale with accordion title font */
-.accordion-trophy-link-vf .imdb-logo-real { height: 0.65em; }
-/* Larger in footer */
-.footer-imdb-vf .imdb-logo-real { height: 26px; }
-/* About trophies row (other trophies are 70px but logo is 4:1 wide) */
-.award-trophies-vf .imdb-logo-real { height: 44px !important; }
 /* Footer IMDb — hidden on mobile */
 .footer-imdb-vf {
     display: flex;
