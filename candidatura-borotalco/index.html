@@ -185,6 +185,83 @@
       margin-bottom: 8px;
     }
 
+    /* --- IMDb badge nel copione --- */
+    .s-imdb-badge {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 10px;
+      text-decoration: none;
+      line-height: 0;
+    }
+    .s-imdb-logo {
+      height: 18px;
+      width: auto;
+      filter: none;
+      opacity: 0.8;
+      transition: opacity 0.3s;
+    }
+    .s-imdb-logo:hover { opacity: 1; }
+
+    /* --- Crediti completi (details/summary) --- */
+    .s-full-credits {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px dashed #ccc;
+      max-width: 860px;
+    }
+    .s-full-credits summary {
+      font-style: italic;
+      color: #666;
+      font-size: 0.85em;
+      cursor: pointer;
+      user-select: none;
+      list-style: none;
+      margin-bottom: 0;
+    }
+    .s-full-credits summary::-webkit-details-marker { display: none; }
+    .s-full-credits[open] summary { margin-bottom: 18px; }
+    .s-credits-table {
+      font-size: 0.78em;
+      color: #444;
+      line-height: 1.9;
+      columns: 2;
+      column-gap: 40px;
+    }
+    .s-credits-section {
+      break-inside: avoid;
+      margin-bottom: 12px;
+    }
+    .s-credits-section-title {
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #111;
+      letter-spacing: 0.5px;
+      font-size: 0.9em;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 4px;
+      padding-bottom: 2px;
+    }
+    .s-credits-row {
+      display: flex;
+      gap: 8px;
+    }
+    .s-credits-role {
+      color: #888;
+      flex-shrink: 0;
+      min-width: 120px;
+    }
+    .s-credits-name { color: #333; }
+    .s-credits-note {
+      font-style: italic;
+      color: #999;
+      font-size: 0.9em;
+      margin-top: 8px;
+    }
+    @media(max-width: 700px) {
+      .s-credits-table { columns: 1; }
+      .s-credits-role { min-width: 90px; }
+    }
+
     /* --- Video nel copione --- */
     .s-video-label {
       font-style: italic;
@@ -435,10 +512,95 @@
               <div class="s-video-meta">
                 <strong>MASKARA — Ycon Ydol (2025)</strong>
                 <span class="s-credits-list">
-                  Regia: Valerio Francini · Formato: 16mm + Super8<br>
+                  Regia: Valerio Francini &amp; Davide Paganelli · Formato: 16mm + Super8<br>
                   ↳ Europe Music Video Award · Toronto Independent MV Award · Tokyo International Short Film Festival
                 </span>
+                <a href="https://www.imdb.com/it/title/tt41511262/" target="_blank" rel="noopener" title="MASKARA su IMDb" class="s-imdb-badge">
+                  <img src="https://m.media-amazon.com/images/G/01/imdb/images/navbar/imdb_logo_desktop-1440815522._CB514892135_.png" alt="IMDb" class="s-imdb-logo">
+                </a>
               </div>
+              <details class="s-full-credits">
+                <summary>// crediti completi ↓</summary>
+                <div class="s-credits-table">
+
+                  <div class="s-credits-section">
+                    <div class="s-credits-section-title">regia e sceneggiatura</div>
+                    <div class="s-credits-row"><span class="s-credits-name">Davide Paganelli, Valerio Francini</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">produzione</span><span class="s-credits-name">Malombra Films Ltd</span></div>
+                  </div>
+
+                  <div class="s-credits-section">
+                    <div class="s-credits-section-title">cast</div>
+                    <div class="s-credits-row"><span class="s-credits-role">Rox / Rose / Ress / Romy</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Poliziotto 1</span><span class="s-credits-name">Cristian Bedini</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Poliziotto 2</span><span class="s-credits-name">Darix Folco</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Ragazzo che sbratta</span><span class="s-credits-name">Rick Noah</span></div>
+                  </div>
+
+                  <div class="s-credits-section">
+                    <div class="s-credits-section-title">produzione</div>
+                    <div class="s-credits-row"><span class="s-credits-role">Produttori Esecutivi</span><span class="s-credits-name">Davide Paganelli, Valerio Francini</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Org. Produzione</span><span class="s-credits-name">Elia Ferroli</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Aiuto Regia</span><span class="s-credits-name">Gabriella Ripamonti</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Assistente Regia</span><span class="s-credits-name">Andrea Martinelli</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Assistente Prod.</span><span class="s-credits-name">Alessandro Stroscio</span></div>
+                  </div>
+
+                  <div class="s-credits-section">
+                    <div class="s-credits-section-title">camera</div>
+                    <div class="s-credits-row"><span class="s-credits-role">Cinematographer</span><span class="s-credits-name">Emanuela Licenziato</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Aiuto Operatrice</span><span class="s-credits-name">Niccolò Di Lallo</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Loader</span><span class="s-credits-name">Gabriele Tiddi</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Gaffer</span><span class="s-credits-name">Filippo Doveri</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">B-cam</span><span class="s-credits-name">Luca Spinacara</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Jolly</span><span class="s-credits-name">Marco Marulli</span></div>
+                  </div>
+
+                  <div class="s-credits-section">
+                    <div class="s-credits-section-title">scenografia</div>
+                    <div class="s-credits-row"><span class="s-credits-role">Scenografi</span><span class="s-credits-name">Ludovica Villani, Giulia Ciucciovino</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Attrezzisti</span><span class="s-credits-name">Gabriele Tiddi, Sveva Paonni</span></div>
+                  </div>
+
+                  <div class="s-credits-section">
+                    <div class="s-credits-section-title">costume &amp; make-up</div>
+                    <div class="s-credits-row"><span class="s-credits-role">Costumista</span><span class="s-credits-name">Alessandra Lucarini</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Stylist</span><span class="s-credits-name">Marco Spagnuolo</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Costumi</span><span class="s-credits-name">Movie Palace SRLS</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">MUA / Hair</span><span class="s-credits-name">Martina De Cesaris, Camilla Basile</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Fotografa scena</span><span class="s-credits-name">Anita Occhinegro</span></div>
+                  </div>
+
+                  <div class="s-credits-section">
+                    <div class="s-credits-section-title">post-produzione</div>
+                    <div class="s-credits-row"><span class="s-credits-role">Montaggio</span><span class="s-credits-name">Valerio Francini, Davide Paganelli</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Colorist</span><span class="s-credits-name">Emanuela Licenziato</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Sound Design</span><span class="s-credits-name">Cristian Bedini</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Titoli</span><span class="s-credits-name">Michele Prisco, Thomas Frittella</span></div>
+                  </div>
+
+                  <div class="s-credits-section">
+                    <div class="s-credits-section-title">stunt</div>
+                    <div class="s-credits-row"><span class="s-credits-role">Coordinator</span><span class="s-credits-name">Massimiliano Bianchi</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Stuntman 1</span><span class="s-credits-name">Darix Folco</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Stuntman 2</span><span class="s-credits-name">Gianpaolo Crescenzo</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Stuntman 3</span><span class="s-credits-name">Noemi Bianchi</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Driver Jeep</span><span class="s-credits-name">Gianluca Salpietro</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Co-Driver</span><span class="s-credits-name">Giada De Cristofaro</span></div>
+                  </div>
+
+                  <div class="s-credits-section">
+                    <div class="s-credits-section-title">comparse</div>
+                    <div class="s-credits-name">Alexia De Santis · Chiara Conti · Alisia De Santis · Christian Antonini · Edoardo Maria Morrone · Filippo Maria Morrone · Elia Torrisi · Franca Porciello · Francesco Botti · Martina D'Ippolito · Raffaele Pirozzi · Samuele Riccardi · Giorgia Lucantoni · Gionatan Bucci · Sophia Braileanu · Riccardo Pigheddu · Chiara Accardo Palumbo</div>
+                  </div>
+
+                  <div class="s-credits-section">
+                    <div class="s-credits-section-title">formato</div>
+                    <div class="s-credits-name">Shot on Kodak<br>Sviluppato e Digitalizzato da Augustus Color</div>
+                  </div>
+
+                </div>
+              </details>
             </div>
 
             <div class="s-video-item">
@@ -513,7 +675,10 @@
             <div class="s-contacts-final">
               <a href="mailto:vxly.ps@gmail.com">vxly.ps@gmail.com</a><br>
               <a href="https://instagram.com/vxly.ps" target="_blank" rel="noopener">@vxly.ps</a><br>
-              <a href="/">valeriofrancini.it</a>
+              <a href="/">valeriofrancini.it</a><br>
+              <a href="https://www.imdb.com/name/nm18378315/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;border:none;">
+                <img src="https://m.media-amazon.com/images/G/01/imdb/images/navbar/imdb_logo_desktop-1440815522._CB514892135_.png" alt="IMDb" style="height:16px;width:auto;filter:none;opacity:0.75;vertical-align:middle;">
+              </a>
             </div>
 
             <p class="s-back">← <a href="/">torna al sito</a></p>
