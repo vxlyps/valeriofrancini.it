@@ -191,16 +191,22 @@
       align-items: center;
       margin-top: 10px;
       text-decoration: none;
-      line-height: 0;
     }
-    .s-imdb-logo {
-      height: 18px;
-      width: auto;
-      filter: none;
-      opacity: 0.8;
+    .s-imdb-text {
+      display: inline-flex;
+      align-items: center;
+      background: #f5c518;
+      color: #000;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 900;
+      font-size: 0.82em;
+      padding: 1px 5px 1px 4px;
+      border-radius: 2px;
+      letter-spacing: -0.02em;
+      line-height: 1.4;
       transition: opacity 0.3s;
     }
-    .s-imdb-logo:hover { opacity: 1; }
+    .s-imdb-badge:hover .s-imdb-text { opacity: 0.75; }
 
     /* --- Crediti completi (details/summary) --- */
     .s-full-credits {
@@ -516,7 +522,7 @@
                   ↳ Europe Music Video Award · Toronto Independent MV Award · Tokyo International Short Film Festival
                 </span>
                 <a href="https://www.imdb.com/it/title/tt41511262/" target="_blank" rel="noopener" title="MASKARA su IMDb" class="s-imdb-badge">
-                  <img src="https://m.media-amazon.com/images/G/01/imdb/images/navbar/imdb_logo_desktop-1440815522._CB514892135_.png" alt="IMDb" class="s-imdb-logo">
+                  <span class="s-imdb-text">IMDb</span>
                 </a>
               </div>
               <details class="s-full-credits">
@@ -676,8 +682,8 @@
               <a href="mailto:vxly.ps@gmail.com">vxly.ps@gmail.com</a><br>
               <a href="https://instagram.com/vxly.ps" target="_blank" rel="noopener">@vxly.ps</a><br>
               <a href="/">valeriofrancini.it</a><br>
-              <a href="https://www.imdb.com/name/nm18378315/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;border:none;">
-                <img src="https://m.media-amazon.com/images/G/01/imdb/images/navbar/imdb_logo_desktop-1440815522._CB514892135_.png" alt="IMDb" style="height:16px;width:auto;filter:none;opacity:0.75;vertical-align:middle;">
+              <a href="https://www.imdb.com/name/nm18378315/" target="_blank" rel="noopener" style="text-decoration:none;border:none;">
+                <span style="display:inline-flex;align-items:center;background:#f5c518;color:#000;font-family:Arial,sans-serif;font-weight:900;font-size:0.75em;padding:1px 5px 1px 4px;border-radius:2px;letter-spacing:-0.02em;">IMDb</span>
               </a>
             </div>
 
