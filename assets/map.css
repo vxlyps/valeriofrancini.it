@@ -108,48 +108,29 @@ a, button, .toggle, .yt-lite { cursor: pointer; }
 #p-fuori { top: 80vh; }
 
 /* rami contacts: scaletta in basso a destra (come i g di paganelli) */
-#c-email { top: 78vh; left: 72vw; }
-#c-ig    { top: 83vh; left: 75vw; }
-#c-imdb  { top: 88vh; left: 78vw; }
+#c-email { top: 79vh; left: 72vw; }
+#c-ig    { top: 85vh; left: 76vw; }
 
 /* =========================================================
-   FOOTER (in tutte le pagine)
+   FOOTER — come su davidepaganelli.it: centrato, sempre in
+   fondo alla finestra, solo il credit.
    ========================================================= */
 .site-footer {
-    color: var(--red);
-    font-size: 11px;
-    text-transform: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.5em;
-}
-.foot-credit {
-    line-height: 1.4;
-    white-space: nowrap;              /* sempre su UNA riga */
-    font-size: clamp(7.5px, 1.5vw, 11px);
-}
-.foot-credit a { text-decoration: underline; }
-.foot-contacts { display: flex; align-items: center; gap: 16px; text-transform: uppercase; flex-shrink: 0; }
-.foot-contacts a { color: var(--red); }
-.foot-contacts a:hover { background: var(--red); color: #fff; text-decoration: underline; }
-.foot-imdb { display: inline-flex; align-items: center; line-height: 0; }
-.foot-imdb img { height: 13px; width: auto; display: block; }
-
-/* variante home: sovrimpressa in basso */
-.home-footer {
     position: fixed;
-    left: 5vw;
-    right: 5vw;
-    bottom: 2.5vh;
-    z-index: 2;
+    bottom: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    color: var(--red);
+    font-size: clamp(7.5px, 1.5vw, 11px);
+    text-transform: none;
+    white-space: nowrap;              /* sempre su UNA riga */
+    text-align: center;
+    opacity: 0.75;
+    background: var(--bg);
+    padding: 3px 10px;
 }
-/* variante pagine interne: in fondo al contenuto */
-.page-footer {
-    margin: 8vh 5vw 3vh;
-    padding-top: 2.2vh;
-    border-top: 1px solid rgba(227, 6, 19, 0.25);
-}
+.site-footer a { text-decoration: underline; }
 
 /* --- VF CHE RIMBALZA --- */
 #dvd-link {
@@ -204,15 +185,18 @@ a.hl:hover { color: #fff; }
 #profile .say-hi a { text-decoration: underline; margin-right: 20px; }
 #profile .say-hi a:hover { background: var(--red); color: #fff; }
 
+/* loghi: prima riga = i 5 award (grandi), seconda riga = profili */
 .about-laurels {
     display: flex;
-    gap: 20px;
+    gap: 26px;
     align-items: center;
     flex-wrap: wrap;
-    margin: 4vh 0 1vh;
+    margin: 4vh 0 0;
     text-indent: 0;
 }
-.about-laurels img { height: 32px; width: auto; display: block; }
+.about-laurels img { height: 52px; width: auto; display: block; }
+.about-laurels.row2 { margin-top: 2.5vh; gap: 30px; }
+.about-laurels.row2 img { height: 34px; }
 
 /* --- PAGINE PROGETTO --- */
 body.page { overflow: auto; }
@@ -222,7 +206,7 @@ body.page { overflow: auto; }
     z-index: 2;
     max-width: 900px;
     margin: 16vh auto 0;
-    padding: 0 5vw;
+    padding: 0 5vw 10vh;   /* aria per il footer fisso in fondo */
     color: var(--red);
 }
 .ptitle { font-size: 24px; font-weight: normal; margin: 0 0 10px; }
@@ -286,7 +270,7 @@ body.photo { overflow: auto; }
     z-index: 2;
     max-width: 1100px;
     margin: 14vh auto 0;
-    padding: 0 5vw;
+    padding: 0 5vw 10vh;   /* aria per il footer fisso in fondo */
     color: var(--red);
 }
 .slider-head { font-size: 16px; margin: 0 0 22px; }
@@ -337,64 +321,47 @@ body.photo { overflow: auto; }
 .thumbs img.cur { opacity: 1; box-shadow: 0 0 0 2px var(--red); }
 
 /* =========================================================
-   MOBILE — la home diventa una lista pulita
+   MOBILE — stessa mappa con le linee, ricomposta su due
+   colonne verticali (come davidepaganelli.it da telefono):
+   sx = about + awards · dx = video + photo + contacts
    ========================================================= */
 @media (max-width: 760px) {
-    body.home { overflow: auto; height: auto; }
-    #bg { display: none; }
+    /* font piccolo come paganelli mobile (lui usa 64%) +
+       tap target più grandi senza spostare il testo */
+    .node { font-size: 10.5px; padding: 6px; margin: -6px; }
+    #n-root { font-size: 13px; }
+    #sub { font-size: 9px; top: calc(50% + 15px); }
 
-    #map {
-        position: static;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: max-content;
-        max-width: 84vw;
-        margin: 12vh auto 16vh;
-        gap: 13px;
-    }
-    #map .node {
-        position: static;
-        transform: none;
-        font-size: 17px;
-        white-space: normal;
-    }
-    #n-root { font-size: 21px; order: 0; margin: 0; }
-    #sub { position: static; transform: none; order: 1; margin: -6px 0 12px; }
+    /* video group — in alto, colonna destra: figli SOPRA il toggle,
+       a scaletta (schema esatto di davidepaganelli.it mobile) */
+    #n-maskara { top: 4vh;  left: 50vw; }
+    #n-scatola { top: 9vh;  left: 55vw; }
+    #n-verra   { top: 14vh; left: 54vw; }
+    #n-seisolo { top: 19vh; left: 60vw; }
+    #n-video   { top: 27vh; left: 66vw; }
 
-    #n-about    { order: 10; }
-    #n-video    { order: 20; }
-    #n-photo    { order: 40; }
-    #n-awards   { order: 60; }
-    #n-contacts { order: 80; }
+    /* about — in alto a sinistra */
+    #n-about { top: 31vh; left: 8vw; }
 
-    .kid { padding-left: 20px; font-size: 14px; }
-    #n-maskara { order: 21; } #n-scatola { order: 22; }
-    #n-verra   { order: 23; } #n-seisolo { order: 24; }
+    /* photo — a destra, a metà */
+    #n-photo { top: 44vh; left: 72vw; }
 
-    .award { position: static; left: auto; order: 61; padding-left: 20px; font-size: 13px; gap: 8px; }
-    .award.on { display: flex; }
-    .award img { height: 20px; }
-    #p-emva { order: 61; } #p-timvf { order: 62; } #p-tisff { order: 63; }
-    #p-roma { order: 64; } #p-fuori { order: 65; }
+    /* awards — in basso a sinistra, figli che si aprono a destra */
+    #n-awards { top: 59vh; left: 3vw; }
+    .award { font-size: 9.5px; gap: 6px; }
+    .award img { height: 14px; }
+    #p-emva  { top: 66vh; left: 30vw; }
+    #p-timvf { top: 72vh; left: 34vw; }
+    #p-tisff { top: 78vh; left: 38vw; }
+    #p-roma  { top: 84vh; left: 42vw; }
+    #p-fuori { top: 90vh; left: 46vw; }
 
-    #c-email { order: 81; } #c-ig { order: 82; } #c-imdb { order: 83; }
+    /* contacts — in basso a destra (schema c1/c2 di paganelli) */
+    #n-contacts { top: 59vh; left: 58vw; }
+    #c-email { top: 68vh; left: 72vw; }
+    #c-ig    { top: 75vh; left: 68vw; }
 
     #dvd-link { width: 48px; }
-
-    /* footer: statico in fondo, impaginato */
-    .home-footer {
-        position: static;
-        left: auto; right: auto; bottom: auto;
-        margin: 4vh 6vw 4vh;
-    }
-    .site-footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-    }
-    .foot-contacts { gap: 18px; }
-
     .home-link { font-size: 14px; }
 
     /* about mobile: blocco a tutta larghezza come paganelli */
@@ -402,17 +369,18 @@ body.photo { overflow: auto; }
         top: 13vh;
         left: 6vw;
         width: 88vw;
-        height: 70vh;
+        height: 74vh;
         font-size: 14px;
         text-indent: 8vw;
     }
-    .about-laurels { gap: 14px; }
-    .about-laurels img { height: 24px; }
+    .about-laurels { gap: 16px; }
+    .about-laurels img { height: 34px; }
+    .about-laurels.row2 img { height: 24px; }
 
     .page-wrap { margin-top: 13vh; }
     .ptitle { font-size: 20px; }
 
     .slider-wrap { margin-top: 13vh; }
-    .slide-img { max-height: 54vh; }
+    .slide-img { max-height: 50vh; }
     .thumbs img { height: 44px; }
 }
