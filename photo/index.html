@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo — Valerio Francini</title>
-    <meta name="description" content="Fotografia analogica di Valerio Francini — 35mm, Super8, pellicola.">
+    <title>Photo — Valerio Francini · Fotografia analogica, Roma</title>
+    <meta name="description" content="Fotografia analogica di Valerio Francini — pellicola 35mm e Super8, Roma. Pubblicato su PhotoVogue.">
 
     <!-- STAGING: rimuovere questa riga al go-live sul dominio -->
     <meta name="robots" content="noindex">
@@ -12,56 +12,87 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://valeriofrancini.it/photo/">
     <meta property="og:title" content="Photo — Valerio Francini">
-    <meta property="og:description" content="Fotografia analogica — 35mm, Super8, pellicola.">
+    <meta property="og:description" content="Fotografia analogica — Roma.">
     <meta property="og:image" content="https://valeriofrancini.it/images/ValerioFrancini/ValerioFrancini_PP.jpg">
     <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://valeriofrancini.it/photo/">
 
-    <link rel="icon" href="../images/Favicon_Emoji_VF.png" type="image/png">
+    <link rel="icon" href="../images/favicon-upsidedown.png" type="image/png">
     <link rel="stylesheet" href="../assets/map.css">
 </head>
 <body class="photo">
 
 <a class="home-link" href="../">/ valerio francini</a>
 
-<div class="photo-wrap">
-    <div class="photo-head">/ photo &mdash; pellicola, 35mm, super8</div>
-    <div class="gallery" id="gallery"></div>
+<div class="slider-wrap">
+    <div class="slider-head">/ photo</div>
+    <div class="slider-stage" id="stage"></div>
+    <div class="slider-cap" id="cap"></div>
+    <div class="thumbs" id="thumbs"></div>
 </div>
+
+<footer class="site-footer page-footer">
+    <div class="foot-credit">/ &copy;2026 valeriofrancini.it ⭐️🧑🏼‍💻🦈 &mdash; roma &middot; website inspired by the crazy mind of <a href="https://caroljpeg.github.io/Andrea_Martinelli/" target="_blank" rel="noopener">andrea martinelli</a></div>
+    <nav class="foot-contacts">
+        <a href="mailto:vxly.ps@gmail.com">/ text me</a>
+        <a href="https://instagram.com/vxly.ps" target="_blank" rel="noopener">/ instagram</a>
+        <a class="foot-imdb" href="https://www.imdb.com/name/nm18378315/" target="_blank" rel="noopener" title="IMDb"><img src="../images/logos/imdb.svg" alt="IMDb"></a>
+    </nav>
+</footer>
 
 <script src="../images/photo/photos.js"></script>
 <script>
 (function () {
     var list = window.VF_PHOTOS || [];
-    var g = document.getElementById('gallery');
+    var stage = document.getElementById('stage');
+    var cap = document.getElementById('cap');
+    var thumbsBox = document.getElementById('thumbs');
 
     if (!list.length) {
-        /* segnaposto: celle quadrate uniformi finché non ci sono foto */
-        for (var i = 0; i < 9; i++) {
-            var ph = document.createElement('div');
-            ph.className = 'frame-ph';
-            ph.textContent = '/ presto';
-            g.appendChild(ph);
-        }
+        var ph = document.createElement('div');
+        ph.className = 'slide-ph';
+        ph.textContent = '/ presto';
+        stage.appendChild(ph);
         return;
     }
 
-    list.forEach(function (item) {
-        var file = typeof item === 'string' ? item : item.file;
-        var cap = typeof item === 'string' ? '' : (item.cap || '');
-        var fig = document.createElement('figure');
-        var img = document.createElement('img');
-        img.src = '../images/photo/' + file;
-        img.alt = cap || 'Valerio Francini';
-        img.loading = 'lazy';
-        img.decoding = 'async';
-        fig.appendChild(img);
-        if (cap) {
-            var fc = document.createElement('figcaption');
-            fc.textContent = '/ ' + cap;
-            fig.appendChild(fc);
-        }
-        g.appendChild(fig);
+    function fileOf(item) { return typeof item === 'string' ? item : item.file; }
+    function capOf(item) { return typeof item === 'string' ? '' : (item.cap || ''); }
+
+    var big = document.createElement('img');
+    big.className = 'slide-img';
+    big.decoding = 'async';
+    big.title = 'click = prossima foto';
+    stage.appendChild(big);
+
+    var thumbs = list.map(function (item, idx) {
+        var t = document.createElement('img');
+        t.src = '../images/photo/' + fileOf(item);
+        t.alt = capOf(item) || ('foto ' + (idx + 1));
+        t.loading = 'lazy';
+        t.decoding = 'async';
+        t.addEventListener('click', function () { show(idx); });
+        thumbsBox.appendChild(t);
+        return t;
     });
+
+    var i = 0;
+    function show(n) {
+        i = (n + list.length) % list.length;
+        big.src = '../images/photo/' + fileOf(list[i]);
+        big.alt = capOf(list[i]) || 'Valerio Francini';
+        cap.textContent = capOf(list[i]) ? '/ ' + capOf(list[i]) : '';
+        thumbs.forEach(function (t, k) { t.classList.toggle('cur', k === i); });
+    }
+
+    /* click sulla foto grande = avanti */
+    big.addEventListener('click', function () { show(i + 1); });
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') show(i + 1);
+        else if (e.key === 'ArrowLeft') show(i - 1);
+    });
+
+    show(0);
 })();
 </script>
 </body>

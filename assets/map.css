@@ -1,6 +1,8 @@
 /* =========================================================
    VALERIO FRANCINI — LA MAPPA
-   rosso su bianco. rami = fulmini (linee spezzate, 1px).
+   Nome al centro (come Paganelli), rami che partono dal
+   centro del nome. Rosso su bianco.
+   Desktop: costellazione. Mobile: lista pulita.
    (candidatura-borotalco usa ancora assets/style.css)
    ========================================================= */
 
@@ -15,23 +17,22 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;
     background: var(--bg);
     cursor: text;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 100%;
     text-transform: uppercase;
 }
+body.home { overflow: hidden; }
 
 ::selection { background: var(--red); color: #fff; }
 
-a {
-    color: var(--red);
-    text-decoration: none;
-    cursor: text;
-}
+a { color: var(--red); text-decoration: none; }
 
-/* --- CANVAS (fulmini) --- */
+/* la manina deve comparire SEMPRE su tutto ciò che si clicca */
+a, button, .toggle, .yt-lite { cursor: pointer; }
+
+/* --- CANVAS (rami) --- */
 #bg {
     position: fixed;
     inset: 0;
@@ -52,15 +53,10 @@ a {
     -webkit-user-select: none;
     user-select: none;
 }
-
-.node:hover {
-    background: var(--red);
-    color: #fff;
-    text-decoration: underline;
-}
+.node:hover { background: var(--red); color: #fff; text-decoration: underline; }
 .toggle { cursor: pointer; }
 
-/* nome al centro (come Paganelli), sottotitolo sotto */
+/* nome al centro, sottotitolo sotto */
 #n-root {
     top: 50%;
     left: 50%;
@@ -83,64 +79,82 @@ a {
 .node.hidden { display: none; }
 
 /* sezioni sparse attorno al nome */
-#n-about { top: 22vh; left: 16vw; }
-#n-video { top: 19vh; left: 64vw; }
-#n-photo { top: 50vh; left: 83vw; }
-#n-premi { top: 70vh; left: 14vw; }
+#n-about    { top: 20vh; left: 15vw; }
+#n-video    { top: 20vh; left: 66vw; }
+#n-photo    { top: 44vh; left: 84vw; }
+#n-awards   { top: 72vh; left: 14vw; }
+#n-contacts { top: 70vh; left: 70vw; }
 
 /* figli (nascosti finché non si apre il ramo) */
 .kid { display: none; }
 .kid.on { display: block; }
 
-/* rami video: cluster a destra, vicino a VIDEO */
-#n-maskara { top: 9vh;  left: 70vw; }
-#n-scatola { top: 14vh; left: 76vw; }
+/* rami video: cluster in alto a destra */
+#n-maskara { top: 8vh;  left: 70vw; }
+#n-scatola { top: 13vh; left: 77vw; }
 #n-verra   { top: 28vh; left: 71vw; }
-#n-seisolo { top: 33vh; left: 77vw; }
+#n-seisolo { top: 33vh; left: 78vw; }
 
-/* righe premio: logo affianco al nome, colonna in basso a sinistra */
-.award {
-    display: none;
-    left: 26vw;
-    font-size: 13px;
-}
+/* righe award: logo affianco al nome, colonna in basso */
+.award { display: none; left: 26vw; font-size: 13px; }
 .award.on { display: flex; align-items: center; gap: 9px; }
 .award img { height: 24px; width: auto; display: block; }
 .award:hover { background: var(--red); color: #fff; }
 
-#p-emva       { top: 56vh; }
-#p-timvf      { top: 61vh; }
-#p-tisff      { top: 66vh; }
-#p-roma       { top: 71vh; }
-#p-fuori      { top: 76vh; }
-#p-photovogue { top: 81vh; }
-#p-wedir      { top: 86vh; }
+#p-emva  { top: 56vh; }
+#p-timvf { top: 62vh; }
+#p-tisff { top: 68vh; }
+#p-roma  { top: 74vh; }
+#p-fuori { top: 80vh; }
 
-/* --- FOOTER HOME --- */
-#credit {
-    position: fixed;
-    bottom: 2.5vh;
-    left: 5vw;
-    right: 5vw;
-    z-index: 2;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 2em;
+/* rami contacts: scaletta in basso a destra (come i g di paganelli) */
+#c-email { top: 78vh; left: 72vw; }
+#c-ig    { top: 83vh; left: 75vw; }
+#c-imdb  { top: 88vh; left: 78vw; }
+
+/* =========================================================
+   FOOTER (in tutte le pagine)
+   ========================================================= */
+.site-footer {
     color: var(--red);
     font-size: 11px;
     text-transform: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5em;
 }
-#credit-left { display: flex; flex-direction: column; gap: 3px; }
-#credit-inspo a { text-decoration: underline; }
-#credit-contacts { display: flex; gap: 16px; text-transform: uppercase; }
-#credit-contacts a:hover { background: var(--red); color: #fff; text-decoration: underline; }
+.foot-credit {
+    line-height: 1.4;
+    white-space: nowrap;              /* sempre su UNA riga */
+    font-size: clamp(7.5px, 1.5vw, 11px);
+}
+.foot-credit a { text-decoration: underline; }
+.foot-contacts { display: flex; align-items: center; gap: 16px; text-transform: uppercase; flex-shrink: 0; }
+.foot-contacts a { color: var(--red); }
+.foot-contacts a:hover { background: var(--red); color: #fff; text-decoration: underline; }
+.foot-imdb { display: inline-flex; align-items: center; line-height: 0; }
+.foot-imdb img { height: 13px; width: auto; display: block; }
+
+/* variante home: sovrimpressa in basso */
+.home-footer {
+    position: fixed;
+    left: 5vw;
+    right: 5vw;
+    bottom: 2.5vh;
+    z-index: 2;
+}
+/* variante pagine interne: in fondo al contenuto */
+.page-footer {
+    margin: 8vh 5vw 3vh;
+    padding-top: 2.2vh;
+    border-top: 1px solid rgba(227, 6, 19, 0.25);
+}
 
 /* --- VF CHE RIMBALZA --- */
 #dvd-link {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     z-index: 1;
     display: block;
     width: 84px;
@@ -149,9 +163,8 @@ a {
 #dvd-link img { width: 100%; display: block; }
 
 /* =========================================================
-   PAGINE INTERNE (about, progetti, photo, 404)
+   PAGINE INTERNE
    ========================================================= */
-
 .home-link {
     position: absolute;
     top: 6vh;
@@ -163,58 +176,43 @@ a {
 }
 .home-link:hover { background: var(--red); color: #fff; }
 
-/* --- ABOUT --- */
-body.about { overflow: auto; }
+/* --- ABOUT (come la about di davidepaganelli.it) --- */
+body.about { overflow: hidden; }
 
-.about-wrap {
-    position: relative;
-    z-index: 2;
-    max-width: 1080px;
-    margin: 16vh auto 4vh;
-    padding: 0 5vw;
-}
-.about-label { font-size: 16px; margin: 0 0 26px; }
-
-.about-grid {
-    display: flex;
-    gap: 6vw;
-    align-items: flex-start;
-}
-.about-text {
-    flex: 1.5;
+#profile {
+    position: absolute;
+    top: 18vh;
+    left: 20vw;
+    width: 60vw;
+    height: 66vh;
+    overflow: auto;
+    z-index: 1;
     color: var(--red);
     text-align: justify;
-    font-size: 19px;
-    line-height: 1.55;
+    text-indent: 5vw;
+    font-size: 17px;
+    line-height: 1.6;
 }
-.about-photo-col { flex: 1; max-width: 340px; }
-.about-photo {
-    width: 100%;
-    display: block;
-    border: 1px solid var(--red);
-}
-.about-photo-cap {
-    margin-top: 8px;
-    font-size: 11px;
-    text-transform: none;
-    color: var(--red);
-}
+#profile::-webkit-scrollbar { display: none; }
+#profile p { margin: 0 0 2.2vh; }
+#profile em { font-style: italic; }
 
 .hl { background: var(--red); color: #fff; text-decoration: underline; }
 a.hl:hover { color: #fff; }
+
+#profile .say-hi { margin-top: 4vh; text-indent: 0; }
+#profile .say-hi a { text-decoration: underline; margin-right: 20px; }
+#profile .say-hi a:hover { background: var(--red); color: #fff; }
 
 .about-laurels {
     display: flex;
     gap: 20px;
     align-items: center;
     flex-wrap: wrap;
-    margin: 5vh 0 3vh;
+    margin: 4vh 0 1vh;
+    text-indent: 0;
 }
-.about-laurels img { height: 34px; width: auto; display: block; }
-
-.about-contacts { display: flex; gap: 18px; flex-wrap: wrap; }
-.about-contacts a { color: var(--red); font-size: 13px; }
-.about-contacts a:hover { background: var(--red); color: #fff; text-decoration: underline; }
+.about-laurels img { height: 32px; width: auto; display: block; }
 
 /* --- PAGINE PROGETTO --- */
 body.page { overflow: auto; }
@@ -223,11 +221,10 @@ body.page { overflow: auto; }
     position: relative;
     z-index: 2;
     max-width: 900px;
-    margin: 16vh auto 8vh;
+    margin: 16vh auto 0;
     padding: 0 5vw;
     color: var(--red);
 }
-
 .ptitle { font-size: 24px; font-weight: normal; margin: 0 0 10px; }
 .pmeta  { font-size: 13px; margin: 0 0 14px; line-height: 1.5; }
 
@@ -248,13 +245,7 @@ body.page { overflow: auto; }
 .pawards a:hover { background: var(--red); color: #fff; }
 .pawards img { height: 30px; width: auto; display: block; }
 
-.pdesc {
-    font-size: 15px;
-    line-height: 1.6;
-    text-transform: none;
-    max-width: 62ch;
-    margin: 26px 0 0;
-}
+.pdesc { font-size: 15px; line-height: 1.6; text-transform: none; max-width: 62ch; margin: 26px 0 0; }
 
 .yt-lite {
     position: relative;
@@ -270,11 +261,9 @@ body.page { overflow: auto; }
 .yt-lite img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.92; }
 .yt-lite-play {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    width: 0;
-    height: 0;
+    width: 0; height: 0;
     border-left: 28px solid var(--red);
     border-top: 17px solid transparent;
     border-bottom: 17px solid transparent;
@@ -286,114 +275,144 @@ body.page { overflow: auto; }
     display: block;
     margin: 26px 0;
 }
-
 .back { font-size: 13px; text-decoration: underline; }
 .back:hover { background: var(--red); color: #fff; }
 
-/* --- PHOTO --- */
+/* --- PHOTO (slideshow: foto grande cliccabile + strip di thumbnails) --- */
 body.photo { overflow: auto; }
 
-.photo-wrap {
+.slider-wrap {
     position: relative;
     z-index: 2;
-    margin: 16vh 5vw 8vh;
+    max-width: 1100px;
+    margin: 14vh auto 0;
+    padding: 0 5vw;
     color: var(--red);
 }
-.photo-head { font-size: 16px; margin: 0 0 26px; }
-
-/* griglia ordinata: celle uguali, quadrate, allineate */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-}
-.gallery figure {
-    position: relative;
-    margin: 0;
-    border: 1px solid var(--red);
-    overflow: hidden;
-}
-.gallery img {
+.slider-head { font-size: 16px; margin: 0 0 22px; }
+.slider-stage {
     width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    display: block;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.gallery figcaption {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 8px 10px;
-    font-size: 11px;
-    text-transform: none;
-    color: #fff;
-    background: var(--red);
-    opacity: 0;
-    transition: opacity 0.2s ease;
-}
-.gallery figure:hover figcaption { opacity: 1; }
-
-/* frame placeholder finché non ci sono foto — stesse celle della griglia */
-.frame-ph {
-    aspect-ratio: 1 / 1;
+.slide-img {
+    max-width: 100%;
+    max-height: 64vh;
     border: 1px solid var(--red);
-    background: repeating-linear-gradient(
-        45deg, transparent, transparent 9px,
-        rgba(227,6,19,0.06) 9px, rgba(227,6,19,0.06) 18px);
+    display: block;
+    cursor: pointer;              /* click = foto successiva */
+}
+.slide-ph {
+    width: 100%;
+    max-width: 620px;
+    aspect-ratio: 3 / 2;
+    border: 1px solid var(--red);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--red);
-    font-size: 11px;
+    font-size: 12px;
+    background: repeating-linear-gradient(45deg, transparent, transparent 9px, rgba(227,6,19,0.06) 9px, rgba(227,6,19,0.06) 18px);
 }
+.slider-cap { text-transform: none; font-size: 12px; margin: 10px 0 0; min-height: 1em; text-align: center; }
 
-/* --- MOBILE --- */
+.thumbs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 22px 0 0;
+}
+.thumbs img {
+    height: 54px;
+    width: auto;
+    display: block;
+    border: 1px solid var(--red);
+    opacity: 0.5;
+    cursor: pointer;
+}
+.thumbs img:hover { opacity: 0.85; }
+.thumbs img.cur { opacity: 1; box-shadow: 0 0 0 2px var(--red); }
+
+/* =========================================================
+   MOBILE — la home diventa una lista pulita
+   ========================================================= */
 @media (max-width: 760px) {
-    .node { font-size: 13px; }
-    .home-link { font-size: 14px; }
+    body.home { overflow: auto; height: auto; }
+    #bg { display: none; }
 
-    /* nome un po' più in alto per lasciare spazio ai premi sotto */
-    #n-root { top: 40%; }
-    #sub { top: calc(40% + 15px); }
-
-    #n-about { top: 17vh; left: 8vw; }
-    #n-video { top: 12vh; left: 58vw; }
-    #n-photo { top: 45vh; left: 62vw; }
-    #n-premi { top: 56vh; left: 6vw; }
-
-    #n-maskara { top: 3vh;  left: 54vw; }
-    #n-scatola { top: 8vh;  left: 63vw; }
-    #n-verra   { top: 23vh; left: 56vw; }
-    #n-seisolo { top: 28vh; left: 65vw; }
-
-    .award { left: 22vw; font-size: 11px; gap: 6px; }
-    .award img { height: 18px; }
-    #p-emva       { top: 51vh; }
-    #p-timvf      { top: 56vh; }
-    #p-tisff      { top: 61vh; }
-    #p-roma       { top: 66vh; }
-    #p-fuori      { top: 71vh; }
-    #p-photovogue { top: 76vh; }
-    #p-wedir      { top: 81vh; }
-
-    #dvd-link { width: 56px; }
-
-    #credit {
+    #map {
+        position: static;
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
-        bottom: 2vh;
+        width: max-content;
+        max-width: 84vw;
+        margin: 12vh auto 16vh;
+        gap: 13px;
     }
+    #map .node {
+        position: static;
+        transform: none;
+        font-size: 17px;
+        white-space: normal;
+    }
+    #n-root { font-size: 21px; order: 0; margin: 0; }
+    #sub { position: static; transform: none; order: 1; margin: -6px 0 12px; }
 
-    .about-grid { flex-direction: column; gap: 4vh; }
-    .about-photo-col { max-width: 260px; }
-    .about-text { font-size: 16px; }
-    .about-laurels img { height: 26px; }
+    #n-about    { order: 10; }
+    #n-video    { order: 20; }
+    #n-photo    { order: 40; }
+    #n-awards   { order: 60; }
+    #n-contacts { order: 80; }
 
-    .page-wrap { margin: 14vh auto 8vh; }
+    .kid { padding-left: 20px; font-size: 14px; }
+    #n-maskara { order: 21; } #n-scatola { order: 22; }
+    #n-verra   { order: 23; } #n-seisolo { order: 24; }
+
+    .award { position: static; left: auto; order: 61; padding-left: 20px; font-size: 13px; gap: 8px; }
+    .award.on { display: flex; }
+    .award img { height: 20px; }
+    #p-emva { order: 61; } #p-timvf { order: 62; } #p-tisff { order: 63; }
+    #p-roma { order: 64; } #p-fuori { order: 65; }
+
+    #c-email { order: 81; } #c-ig { order: 82; } #c-imdb { order: 83; }
+
+    #dvd-link { width: 48px; }
+
+    /* footer: statico in fondo, impaginato */
+    .home-footer {
+        position: static;
+        left: auto; right: auto; bottom: auto;
+        margin: 4vh 6vw 4vh;
+    }
+    .site-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .foot-contacts { gap: 18px; }
+
+    .home-link { font-size: 14px; }
+
+    /* about mobile: blocco a tutta larghezza come paganelli */
+    #profile {
+        top: 13vh;
+        left: 6vw;
+        width: 88vw;
+        height: 70vh;
+        font-size: 14px;
+        text-indent: 8vw;
+    }
+    .about-laurels { gap: 14px; }
+    .about-laurels img { height: 24px; }
+
+    .page-wrap { margin-top: 13vh; }
     .ptitle { font-size: 20px; }
 
-    .photo-wrap { margin: 13vh 5vw 8vh; }
-    .gallery { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .slider-wrap { margin-top: 13vh; }
+    .slide-img { max-height: 54vh; }
+    .thumbs img { height: 44px; }
 }
