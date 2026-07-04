@@ -101,11 +101,13 @@ a {
 }
 .award:hover { background: var(--red); color: #fff; }
 
-#p-emva  { top: 34vh; }
-#p-timvf { top: 43vh; }
-#p-tisff { top: 52vh; }
-#p-roma  { top: 61vh; }
-#p-fuori { top: 70vh; }
+#p-emva       { top: 28vh; }
+#p-timvf      { top: 35vh; }
+#p-tisff      { top: 42vh; }
+#p-roma       { top: 49vh; }
+#p-fuori      { top: 56vh; }
+#p-photovogue { top: 63vh; }
+#p-wedir      { top: 70vh; }
 
 /* --- FOOTER HOME --- */
 #credit {
@@ -292,27 +294,42 @@ body.photo { overflow: auto; }
 }
 .photo-head { font-size: 16px; margin: 0 0 26px; }
 
+/* griglia ordinata: celle uguali, quadrate, allineate */
 .gallery {
-    column-count: 3;
-    column-gap: 14px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
 }
 .gallery figure {
-    margin: 0 0 14px;
-    break-inside: avoid;
+    position: relative;
+    margin: 0;
     border: 1px solid var(--red);
+    overflow: hidden;
 }
-.gallery img { width: 100%; display: block; }
+.gallery img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
 .gallery figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 8px 10px;
     font-size: 11px;
     text-transform: none;
-    padding: 6px 8px;
-    border-top: 1px solid var(--red);
+    color: #fff;
+    background: var(--red);
+    opacity: 0;
+    transition: opacity 0.2s ease;
 }
+.gallery figure:hover figcaption { opacity: 1; }
 
-/* frame placeholder finché non ci sono foto */
+/* frame placeholder finché non ci sono foto — stesse celle della griglia */
 .frame-ph {
-    break-inside: avoid;
-    margin: 0 0 14px;
+    aspect-ratio: 1 / 1;
     border: 1px solid var(--red);
     background: repeating-linear-gradient(
         45deg, transparent, transparent 9px,
@@ -340,13 +357,15 @@ body.photo { overflow: auto; }
     #n-verra   { top: 42vh; left: 50vw; }
     #n-seisolo { top: 49vh; left: 50vw; }
 
-    .award { left: 46vw; font-size: 11px; }
-    .award img { height: 22px; }
-    #p-emva  { top: 30vh; }
-    #p-timvf { top: 40vh; }
-    #p-tisff { top: 50vh; }
-    #p-roma  { top: 60vh; }
-    #p-fuori { top: 70vh; }
+    .award { left: 44vw; font-size: 11px; gap: 7px; }
+    .award img { height: 20px; }
+    #p-emva       { top: 26vh; }
+    #p-timvf      { top: 33vh; }
+    #p-tisff      { top: 40vh; }
+    #p-roma       { top: 47vh; }
+    #p-fuori      { top: 54vh; }
+    #p-photovogue { top: 61vh; }
+    #p-wedir      { top: 68vh; }
 
     #dvd-link { width: 56px; }
 
@@ -366,9 +385,5 @@ body.photo { overflow: auto; }
     .ptitle { font-size: 20px; }
 
     .photo-wrap { margin: 13vh 5vw 8vh; }
-    .gallery { column-count: 1; }
-}
-
-@media (min-width: 761px) and (max-width: 1100px) {
-    .gallery { column-count: 2; }
+    .gallery { grid-template-columns: repeat(2, 1fr); gap: 8px; }
 }

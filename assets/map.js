@@ -25,7 +25,7 @@
     /* sezioni espandibili -> figli */
     var GROUPS = {
         'n-video': ['n-maskara', 'n-scatola', 'n-verra', 'n-seisolo'],
-        'n-premi': ['p-emva', 'p-timvf', 'p-tisff', 'p-roma', 'p-fuori']
+        'n-premi': ['p-emva', 'p-timvf', 'p-tisff', 'p-roma', 'p-fuori', 'p-photovogue', 'p-wedir']
     };
 
     /* strike[childId] = { t0 } quando il ramo compare */

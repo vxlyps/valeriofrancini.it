@@ -35,12 +35,10 @@
     var g = document.getElementById('gallery');
 
     if (!list.length) {
-        /* segnaposto: fotogrammi vuoti, altezze varie */
-        var hs = [220, 300, 180, 260, 200, 320, 240, 190, 280];
-        for (var i = 0; i < hs.length; i++) {
+        /* segnaposto: celle quadrate uniformi finché non ci sono foto */
+        for (var i = 0; i < 9; i++) {
             var ph = document.createElement('div');
             ph.className = 'frame-ph';
-            ph.style.height = hs[i] + 'px';
             ph.textContent = '/ presto';
             g.appendChild(ph);
         }
