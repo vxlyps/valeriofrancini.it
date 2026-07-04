@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Valerio Francini</title>
+    <meta name="robots" content="noindex">
+    <style>
+        html, body {
+            margin: 0; padding: 0; height: 100%;
+            background: #fff; color: #E30613; cursor: text;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            text-transform: uppercase;
+        }
+        .wrap { padding: 42vh 10vw 0; text-align: center; font-size: 16px; }
+        a { color: #E30613; text-decoration: underline; cursor: text; }
+        a:hover { background: #E30613; color: #fff; }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <p>/ 404 &mdash; questo fotogramma non &egrave; mai stato girato</p>
+    <p><a id="home" href="/">/ torna alla mappa</a></p>
+</div>
+<script>
+/* su github.io il sito vive in /<repo>/ */
+if (location.hostname.endsWith('github.io')) {
+    document.getElementById('home').href = '/' + location.pathname.split('/')[1] + '/';
+}
+</script>
+</body>
+</html>

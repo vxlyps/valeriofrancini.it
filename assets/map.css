@@ -1,0 +1,289 @@
+/* =========================================================
+   VALERIO FRANCINI — LA MAPPA
+   rosso pellicola su bianco. linee da 1px. niente altro.
+   (candidatura-borotalco usa ancora assets/style.css)
+   ========================================================= */
+
+:root {
+    --red: #E30613;
+    --bg: #ffffff;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background: var(--bg);
+    cursor: text;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 100%;
+    text-transform: uppercase;
+}
+
+::selection { background: var(--red); color: #fff; }
+
+a {
+    color: var(--red);
+    text-decoration: none;
+    cursor: text;
+}
+
+/* --- CANVAS (fulmini di pellicola) --- */
+#bg {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    display: block;
+}
+
+/* --- NODI --- */
+.node {
+    position: absolute;
+    z-index: 2;
+    color: var(--red);
+    font-size: 16px;
+    line-height: 1.3;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.node:hover {
+    background: var(--red);
+    color: #fff;
+    text-decoration: underline;
+}
+
+#n-root { top: 6vh; left: 5vw; text-decoration: underline; }
+
+#sub {
+    position: absolute;
+    top: calc(6vh + 26px);
+    left: 5vw;
+    z-index: 2;
+    color: var(--red);
+    font-size: 11px;
+    text-transform: none;
+}
+
+/* colonna sezioni */
+#n-about    { top: 24vh; left: 24vw; }
+#n-video    { top: 36vh; left: 24vw; }
+#n-corti    { top: 48vh; left: 24vw; }
+#n-premi    { top: 60vh; left: 24vw; }
+#n-contatti { top: 72vh; left: 24vw; }
+
+/* figli (nascosti finché non si apre il ramo) */
+.kid { display: none; }
+.kid.on { display: block; }
+
+#n-maskara    { top: 31vh; left: 52vw; }
+#n-scatola    { top: 39vh; left: 52vw; }
+#n-verra      { top: 47vh; left: 52vw; }
+#n-seisolo    { top: 55vh; left: 52vw; }
+#n-emva       { top: 63vh; left: 52vw; }
+#n-photovogue { top: 70vh; left: 52vw; }
+#n-wedir      { top: 77vh; left: 52vw; }
+#n-email      { top: 86vh; left: 48vw; }
+#n-ig         { top: 86vh; left: 63vw; }
+#n-imdb       { top: 86vh; left: 78vw; }
+
+#credit {
+    position: absolute;
+    bottom: 2.5vh;
+    left: 5vw;
+    z-index: 2;
+    color: var(--red);
+    font-size: 11px;
+    text-transform: none;
+}
+#credit a { text-decoration: underline; }
+
+/* --- VF CHE RIMBALZA --- */
+#dvd-link {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+    width: 84px;
+    will-change: transform;
+}
+#dvd-link img { width: 100%; display: block; }
+
+/* =========================================================
+   PAGINE INTERNE (chi sono, progetti, 404)
+   ========================================================= */
+
+.home-link {
+    position: absolute;
+    top: 6vh;
+    left: 5vw;
+    z-index: 2;
+    color: var(--red);
+    font-size: 16px;
+    text-decoration: underline;
+}
+.home-link:hover { background: var(--red); color: #fff; }
+
+/* --- CHI SONO --- */
+#profile {
+    position: absolute;
+    top: 18vh;
+    left: 20vw;
+    width: 60vw;
+    height: 60vh;
+    overflow: auto;
+    z-index: 2;
+    color: var(--red);
+    text-align: justify;
+    font-size: 20px;
+    line-height: 1.55;
+    text-indent: 5vw;
+    align-content: center;
+}
+
+.hl {
+    background: var(--red);
+    color: #fff;
+    text-decoration: underline;
+}
+a.hl:hover { color: #fff; }
+
+#photo {
+    position: fixed;
+    right: 6vw;
+    bottom: 10vh;
+    width: 200px;
+    display: none;
+    z-index: 3;
+    border: 1px solid var(--red);
+}
+#photo.on { display: block; }
+
+#laurels {
+    position: fixed;
+    left: 5vw;
+    bottom: 3vh;
+    z-index: 2;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 55vw;
+}
+#laurels img { height: 32px; width: auto; display: block; }
+
+#about-contacts {
+    position: fixed;
+    right: 5vw;
+    bottom: 3vh;
+    z-index: 2;
+    display: flex;
+    gap: 18px;
+}
+#about-contacts a { color: var(--red); font-size: 13px; }
+#about-contacts a:hover { background: var(--red); color: #fff; text-decoration: underline; }
+
+/* --- PAGINE PROGETTO --- */
+body.page { overflow: auto; }
+
+.page-wrap {
+    position: relative;
+    z-index: 2;
+    margin: 16vh 10vw 8vh;
+    color: var(--red);
+}
+
+.ptitle {
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0 0 8px;
+}
+
+.pmeta {
+    font-size: 12px;
+    margin: 0 0 6px;
+}
+
+.plinks { font-size: 12px; margin: 0 0 4px; }
+.plinks a { text-decoration: underline; margin-right: 16px; }
+.plinks a:hover { background: var(--red); color: #fff; }
+
+.yt-lite {
+    position: relative;
+    display: block;
+    width: min(100%, 880px);
+    aspect-ratio: 16 / 9;
+    margin: 28px 0;
+    padding: 0;
+    border: 1px solid var(--red);
+    background: #000;
+    cursor: pointer;
+}
+.yt-lite img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0.92;
+}
+.yt-lite-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-left: 28px solid var(--red);
+    border-top: 17px solid transparent;
+    border-bottom: 17px solid transparent;
+}
+.page-wrap iframe {
+    width: min(100%, 880px);
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--red);
+    display: block;
+    margin: 28px 0;
+}
+
+.back { font-size: 13px; text-decoration: underline; }
+.back:hover { background: var(--red); color: #fff; }
+
+/* --- MOBILE --- */
+@media (max-width: 760px) {
+    .node { font-size: 12px; }
+    .home-link { font-size: 13px; }
+
+    #n-about, #n-video, #n-corti, #n-premi, #n-contatti { left: 20vw; }
+
+    #n-maskara, #n-scatola, #n-verra, #n-seisolo,
+    #n-emva, #n-photovogue, #n-wedir { left: 46vw; }
+
+    #n-email { top: 86vh; left: 38vw; }
+    #n-ig    { top: 86vh; left: 60vw; }
+    #n-imdb  { top: 92vh; left: 38vw; }
+
+    #dvd-link { width: 56px; }
+
+    #profile {
+        top: 12vh;
+        left: 7vw;
+        width: 86vw;
+        height: 62vh;
+        font-size: 15px;
+        text-indent: 8vw;
+    }
+    #photo { width: 130px; bottom: 16vh; }
+    #laurels { max-width: 90vw; bottom: 10vh; }
+    #laurels img { height: 24px; }
+    #about-contacts { bottom: 3vh; left: 5vw; right: auto; }
+
+    .page-wrap { margin: 14vh 7vw 8vh; }
+}
+
+/* accessibilità: se l'utente preferisce meno movimento,
+   le linee restano ferme (gestito in map.js) */

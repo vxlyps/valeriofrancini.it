@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi sono — Valerio Francini</title>
+    <meta name="description" content="Valerio Francini — regista e sceneggiatore indipendente, Roma. Gira in pellicola: 16mm e Super8.">
+    <meta name="author" content="Valerio Francini">
+
+    <!-- STAGING: rimuovere questa riga al go-live sul dominio -->
+    <meta name="robots" content="noindex">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://valeriofrancini.it/chi-sono/">
+    <meta property="og:title" content="Chi sono — Valerio Francini">
+    <meta property="og:description" content="Regista (+o-)">
+    <meta property="og:image" content="https://valeriofrancini.it/images/ValerioFrancini/ValerioFrancini_PP.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="../images/Favicon_Emoji_VF.png" type="image/png">
+    <link rel="stylesheet" href="../assets/map.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://valeriofrancini.it/#person",
+      "name": "Valerio Francini",
+      "url": "https://valeriofrancini.it/",
+      "mainEntityOfPage": "https://valeriofrancini.it/chi-sono/",
+      "image": "https://valeriofrancini.it/images/ValerioFrancini/ValerioFrancini_PP.jpg",
+      "jobTitle": ["Regista", "Sceneggiatore", "Film Director", "Screenwriter"],
+      "description": "Regista e sceneggiatore indipendente romano, voce del cinema underground italiano. Scrive e dirige music video e cortometraggi, spesso girati in pellicola 16mm e Super8.",
+      "homeLocation": { "@type": "Place", "name": "Roma, Italia" },
+      "sameAs": [
+        "https://www.imdb.com/name/nm18378315/",
+        "https://instagram.com/vxly.ps",
+        "https://www.vogue.com/photovogue/photographers/254090",
+        "https://we.directory/valeriofrancini"
+      ],
+      "email": "mailto:vxly.ps@gmail.com"
+    }
+    </script>
+</head>
+<body>
+
+<a class="home-link" href="../">/ valerio francini</a>
+
+<div id="profile">
+    My name is <span id="me" class="hl">Valerio Francini</span>, I am 26 years old, born and raised in Rome.
+    I am an independent <span class="hl">director</span> and <span class="hl">screenwriter</span>.
+    I started young with analog photography, quickly growing passionate about cinema and storytelling.
+    In recent years I have written and directed music videos and short films &mdash; this is one of the
+    latest projects I'm proud of, shot entirely on 16mm and Super8 film:
+    <a class="hl" href="../maskara/">maskara &mdash; ycon ydol</a>.
+    I studied <span class="hl">philosophy</span>, a path seemingly distant from cinema, but one I chose
+    to form myself as a person and nurture my vision of the world and reality.
+</div>
+
+<img id="photo" src="../images/ValerioFrancini/ValerioFrancini_PP.jpg" alt="Valerio Francini">
+
+<div id="laurels">
+    <a href="https://www.emusicawards.eu/blogall/winners-of-season-20/" target="_blank" rel="noopener" title="Best Rock Video — Europe Music Video Awards 2025"><img src="../images/laurel/emva-2025.png" alt="Europe Music Video Award 2025"></a>
+    <a href="https://www.imdb.com/it/event/ev0039635/2025/1/" target="_blank" rel="noopener" title="Toronto International Music Video Festival"><img src="../images/laurel/timvf-2025.png" alt="Toronto International Music Video Festival"></a>
+    <a href="https://www.tokyoshortfilmfest.com/post/maskara-yconydol-valerio-francini-davide-paganelli" target="_blank" rel="noopener" title="Tokyo International Short Film Festival"><img src="../images/laurel/tisff-2025.png" alt="Tokyo International Short Film Festival"></a>
+    <span title="Roma Short Film Festival"><img src="../images/laurel/roma-sff-2025.png" alt="Roma Short Film Festival"></span>
+    <a href="https://www.fuoricampofilmfest.com/news" target="_blank" rel="noopener" title="Fuoricampo Cinema Giovane FilmFest 2017"><img src="../images/laurel/FuoricampoFilmFest_ValerioFrancini.png" alt="Fuoricampo Film Fest"></a>
+</div>
+
+<div id="about-contacts">
+    <a href="mailto:vxly.ps@gmail.com">/ scrivimi</a>
+    <a href="https://instagram.com/vxly.ps" target="_blank" rel="noopener">/ instagram</a>
+    <a href="https://www.imdb.com/name/nm18378315/" target="_blank" rel="noopener">/ imdb</a>
+</div>
+
+<script>
+/* la foto appare passando sul nome */
+(function () {
+    var me = document.getElementById('me');
+    var photo = document.getElementById('photo');
+    if (!me || !photo) return;
+    me.addEventListener('mouseenter', function () { photo.classList.add('on'); });
+    me.addEventListener('mouseleave', function () { photo.classList.remove('on'); });
+    me.addEventListener('click', function () { photo.classList.toggle('on'); });
+})();
+</script>
+</body>
+</html>

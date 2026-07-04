@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidatura — Valerio Francini × Borotalco TV</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Una candidatura in formato sceneggiatura. Valerio Francini — regista (+o-), Roma.">
+  <meta name="author" content="Valerio Francini">
+
+  <!-- Open Graph / anteprima link -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://valeriofrancini.it/candidatura-borotalco/">
+  <meta property="og:title" content="Candidatura — Valerio Francini × Borotalco TV">
+  <meta property="og:description" content="Una candidatura in formato sceneggiatura. FADE IN:">
+  <meta property="og:image" content="https://valeriofrancini.it/images/ValerioFrancini/ValerioFrancini_PP.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../images/Favicon_Emoji_VF.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/style.css">
+
+  <style>
+    /* Questa pagina scrolla liberamente */
+    body { overflow: auto !important; }
+
+    .portfolio-fullwidth-vf {
+      height: auto !important;
+      min-height: 100dvh !important;
+      overflow: visible !important;
+    }
+
+    .portfolio-container-vf {
+      height: auto !important;
+      min-height: 100dvh !important;
+      overflow: visible !important;
+      /* Rimuoviamo i padding laterali: il copione gestisce i propri margini */
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    /* Rimettiamo il padding orizzontale solo su header e footer */
+    .portfolio-header-vf,
+    .portfolio-footer-vf {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+
+    /* Sticky header + allineamento centrato verticalmente */
+    .portfolio-header-vf {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-color);
+      align-items: center !important;
+      padding-top: 0.6rem !important;
+      padding-bottom: 0.6rem !important;
+    }
+    /* Rimuovi padding-top extra sul nav quando è centrato */
+    .portfolio-header-vf .portfolio-nav-vf {
+      padding-top: 0 !important;
+    }
+
+    /* =============================================
+       BLOCCO COPIONE — sempre bianco carta, mai dark
+       ============================================= */
+    .screenplay-wrap {
+      background: #fdfdfc;
+      color: #111;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 16px;
+      line-height: 1.3;
+      overflow-x: hidden;
+      margin: 1.5rem 0;
+    }
+
+    /* Selezione in stile copione */
+    .screenplay-wrap ::selection {
+      background: #111;
+      color: #fff;
+    }
+
+    .screenplay-page {
+      width: 100%;
+      padding: 60px 8vw;
+      position: relative;
+    }
+
+    /* --- Cover --- */
+    .s-header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12vh;
+      font-style: italic;
+      color: #555;
+    }
+
+    .s-title-block {
+      text-align: center;
+      margin-bottom: 20vh;
+    }
+    .s-title {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      font-size: 1em;
+      font-weight: 600;
+    }
+    .s-byline { margin-bottom: 6px; }
+    .s-author { letter-spacing: 1px; margin-bottom: 30px; }
+    .s-copyright {
+      text-align: center;
+      font-size: 0.72em;
+      color: #666;
+      font-style: italic;
+      margin-top: -4px;
+      margin-bottom: 22px;
+      letter-spacing: 0.5px;
+    }
+    .s-submitted {
+      color: #555;
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .s-submitted-logo {
+      display: block;
+      height: 20px;
+      width: auto;
+      /* Bianco → nero per il copione a sfondo chiaro */
+      filter: invert(1);
+      opacity: 0.8;
+    }
+
+    .s-meta-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 130px;
+    }
+    .s-meta-right { text-align: right; }
+    .s-meta-right del {
+      text-decoration: line-through;
+      text-decoration-thickness: 1px;
+    }
+
+    /* --- Corpo script --- */
+    .s-body { padding-bottom: 80px; }
+
+    .s-transition-in {
+      text-align: left;
+      text-transform: uppercase;
+      margin-bottom: 50px;
+    }
+    .s-transition-out {
+      text-align: right;
+      text-transform: uppercase;
+      margin-top: 80px;
+      margin-bottom: 30px;
+    }
+
+    .s-slug-wrap {
+      margin-top: 40px;
+      margin-bottom: 16px;
+    }
+    .s-slug {
+      text-transform: uppercase;
+      font-weight: bold;
+      display: inline-block;
+      padding: 2px 6px;
+      margin-left: -6px;
+    }
+    .s-slug:hover {
+      background-color: #111;
+      color: #fdfdfc;
+    }
+
+    .s-action {
+      margin-bottom: 18px;
+      max-width: 800px;
+      text-align: left;
+    }
+
+    .s-character {
+      text-transform: uppercase;
+      margin-top: 24px;
+      margin-bottom: 0;
+      margin-left: clamp(100px, 20vw, 350px);
+    }
+    .s-paren {
+      margin-left: clamp(80px, 15vw, 250px);
+      margin-bottom: 0;
+    }
+    .s-dialogue {
+      margin-left: clamp(50px, 10vw, 150px);
+      max-width: 600px;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    /* --- IMDb badge nel copione --- */
+    .s-imdb-badge {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 10px;
+      text-decoration: none;
+    }
+    .s-imdb-logo {
+      height: 20px;
+      width: auto;
+      filter: none;
+      vertical-align: middle;
+      transition: opacity 0.3s;
+    }
+    .s-imdb-badge:hover .s-imdb-logo { opacity: 0.75; }
+    .s-imdb-contact { height: 15px; }
+
+    /* --- Crediti completi (details/summary) --- */
+    .s-full-credits {
+      margin-top: 22px;
+      padding-top: 14px;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 14px;
+      max-width: 860px;
+      text-align: left; /* override parent centering */
+    }
+    .s-full-credits summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #111;
+      font-size: 0.78em;
+      letter-spacing: 2px;
+      cursor: pointer;
+      user-select: none;
+      list-style: none;
+      margin-bottom: 0;
+      transition: opacity 0.2s;
+    }
+    .s-full-credits summary:hover { opacity: 0.55; }
+    .s-full-credits summary::after {
+      content: '+';
+      font-size: 1.5em;
+      font-weight: 400;
+      line-height: 1;
+      transition: transform 0.25s;
+    }
+    .s-full-credits[open] summary::after { transform: rotate(45deg); }
+    .s-full-credits summary::-webkit-details-marker { display: none; }
+    .s-full-credits[open] summary { margin-bottom: 18px; }
+    .s-credits-table {
+      font-size: 0.78em;
+      color: #444;
+      line-height: 1.9;
+      columns: 2;
+      column-gap: 40px;
+    }
+    .s-credits-section {
+      break-inside: avoid;
+      margin-bottom: 12px;
+    }
+    .s-credits-section-title {
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #111;
+      letter-spacing: 0.5px;
+      font-size: 0.9em;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 4px;
+      padding-bottom: 2px;
+    }
+    .s-credits-row {
+      display: flex;
+      gap: 8px;
+    }
+    .s-credits-role {
+      color: #555;
+      flex-shrink: 0;
+      min-width: 120px;
+    }
+    .s-credits-name { color: #222; }
+    @media(max-width: 700px) {
+      .s-credits-table { columns: 1; }
+      .s-credits-role { min-width: 90px; }
+    }
+
+    /* --- Separatori di sezione --- */
+    .s-video-label {
+      font-style: normal;
+      color: #111;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 1.05em;
+      letter-spacing: 3px;
+      text-align: left;
+      max-width: 860px;
+      margin: 80px auto 36px;
+    }
+    .s-video-item {
+      margin: 0 auto 48px;
+      max-width: 860px;
+    }
+    .s-video-wrapper {
+      aspect-ratio: 16/9;
+      background: #000;
+      width: 100%;
+    }
+    .s-video-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+    .s-video-meta {
+      font-size: 0.95em;
+      color: #111;
+      margin-top: 16px;
+      line-height: 1.8;
+      text-align: center;
+    }
+    .s-video-title-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .s-video-meta strong {
+      color: #000;
+      display: block;
+      font-size: 1.25em;
+      letter-spacing: 1px;
+    }
+    .s-video-meta .s-credits-list {
+      display: block;
+      margin-top: 4px;
+      color: #444;
+      font-size: 0.9em;
+    }
+
+    /* --- Awards display --- */
+    .s-awards-row {
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+      justify-content: center;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .s-award-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: opacity 0.3s;
+      max-width: 110px;
+      text-align: center;
+    }
+    .s-award-item:hover { opacity: 0.6; }
+    .s-award-img {
+      height: 64px;
+      width: auto;
+      max-width: 150px;
+      filter: none; /* laurel nere su sfondo bianco — già leggibili */
+    }
+    .s-imdb-event-row {
+      margin-top: 14px;
+      text-align: center;
+    }
+    .s-imdb-event-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      color: #444;
+      font-size: 0.8em;
+      letter-spacing: 0.3px;
+      transition: opacity 0.3s;
+    }
+    .s-imdb-event-link:hover { opacity: 0.6; }
+
+    /* --- About nel copione --- */
+    .s-about-text .s-character,
+    .s-about-text .s-paren,
+    .s-about-text .s-dialogue {
+      margin-left: 0;
+      max-width: 100%;
+    }
+
+    /* --- Foto centrata sotto dialogo --- */
+    .s-about-photo-center {
+      text-align: center;
+      margin: 32px auto 10px;
+      max-width: 260px;
+    }
+    .s-about-photo-center img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+      border-radius: 15px;
+      border: 1px solid var(--border-color);
+    }
+
+    /* --- Moodboard button --- */
+    .s-moodboard-btn-wrap {
+      margin-top: 22px;
+      text-align: center;
+    }
+    .s-moodboard-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      min-width: 260px;
+      padding: 12px 18px;
+      color: #111;
+      text-decoration: none !important;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.78em;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: background 0.18s, color 0.18s;
+    }
+    .s-moodboard-btn::after { content: '↗'; font-size: 1.25em; font-weight: 400; }
+    .s-moodboard-btn:hover {
+      background: #111;
+      color: #fdfdfc;
+    }
+
+    /* --- Fine / contatti --- */
+    .s-end {
+      border-top: 1px solid #ddd;
+      padding-top: 50px;
+      margin-top: 30px;
+    }
+    .s-the-end {
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 60px;
+    }
+    .s-contacts-final {
+      text-align: center;
+      color: #333;
+      line-height: 2;
+      margin-bottom: 40px;
+    }
+    .s-contacts-final a {
+      color: #111;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .s-contacts-final a:hover { text-decoration: underline; }
+    .s-back {
+      text-align: center;
+      font-style: italic;
+      color: #777;
+      font-size: 0.9em;
+      margin-top: 30px;
+    }
+    .s-back a {
+      color: #111;
+      font-style: normal;
+      font-weight: bold;
+    }
+    .s-back a:hover { text-decoration: underline; }
+
+    /* --- Print: Cmd+P → copione impaginato come un vero script --- */
+    .s-print-url { display: none; }
+    @media print {
+      .portfolio-header-vf,
+      .portfolio-footer-vf,
+      .s-back,
+      #vf-intro-overlay { display: none !important; }
+      body { background: #fff !important; overflow: visible !important; }
+      .screenplay-wrap { margin: 0; font-size: 12pt; }
+      .screenplay-page { padding: 0 0.5in; }
+      .s-title-block { margin-bottom: 3in; }
+      .s-meta-bottom { margin-bottom: 0; page-break-after: always; }
+      /* i video non si stampano: al loro posto il link */
+      .s-video-wrapper { display: none; }
+      .s-print-url {
+        display: block;
+        text-align: center;
+        font-size: 0.85em;
+        color: #111;
+        border: 1px solid #111;
+        padding: 10px;
+        margin-bottom: 8px;
+      }
+      .s-video-item { page-break-inside: avoid; }
+      .s-full-credits, .s-imdb-badge { display: none; }
+      .s-moodboard-btn::after { content: ' — valeriofrancini.it/images/scatola-rossa-moodboard.pdf'; font-size: 0.9em; }
+      .s-about-photo-center { page-break-inside: avoid; }
+    }
+
+    /* --- Mobile --- */
+    @media (max-width: 700px) {
+      .screenplay-page { padding: 40px 6vw; }
+      .s-header-top { flex-direction: column; gap: 6px; margin-bottom: 8vh; }
+      .s-title-block { margin-bottom: 12vh; }
+      .s-title { font-weight: 700; }
+      .s-meta-bottom { flex-direction: column; gap: 20px; margin-bottom: 80px; }
+      .s-meta-right { text-align: left; }
+      /* Mobile: mantieni rientri screenplay ridotti ma presenti */
+      .s-character { margin-left: 15vw; }
+      .s-paren     { margin-left: 10vw; }
+      .s-dialogue  { margin-left: 5vw; max-width: 90vw; }
+      /* About text: dialoghi a sinistra senza rientri extra */
+      .s-about-text .s-character,
+      .s-about-text .s-paren,
+      .s-about-text .s-dialogue { margin-left: 0; max-width: 100%; }
+      .s-video-label { font-size: 0.9em; letter-spacing: 2px; margin: 56px auto 24px; }
+      .s-video-meta strong { font-size: 1.1em; }
+      .s-award-img { height: 52px; }
+      .s-awards-row { gap: 18px; }
+      .s-moodboard-btn { min-width: 0; width: 100%; box-sizing: border-box; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="portfolio-fullwidth-vf">
+  <div class="portfolio-container-vf">
+
+    <!-- HEADER DEL SITO -->
+    <header class="portfolio-header-vf">
+      <div>
+        <a href="../" class="header-title-link-vf">
+          <h1 class="header-title-vf">Valerio Francini</h1>
+        </a>
+        <p class="header-subtitle-vf">// regista (+o-)</p>
+      </div>
+      <nav class="portfolio-nav-vf">
+        <a href="../">Home</a>
+        <a href="../chi-sono/">About</a>
+        <a href="#" id="contact-trigger-vf">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- COPIONE -->
+      <div class="screenplay-wrap">
+        <div class="screenplay-page">
+
+          <!-- COVER -->
+          <div class="s-header-top">
+            <em>Riservato a: Borotalco TV</em>
+            <span>pag. 1.</span>
+          </div>
+
+          <div class="s-title-block">
+            <div class="s-title">//CANDIDATURA</div>
+            <div class="s-byline">Written and Directed by</div>
+            <div class="s-author">Valerio Francini</div>
+            <div class="s-submitted">
+              submitted to:
+              <a href="https://www.borotalco.tv/" target="_blank" rel="noopener">
+                <img src="../images/logos/borotalco-white.svg" alt="Borotalco TV" class="s-submitted-logo">
+              </a>
+            </div>
+          </div>
+
+          <div class="s-meta-bottom">
+            <div class="s-contact-info">
+              <a href="mailto:vxly.ps@gmail.com" style="color:inherit;text-decoration:none;font-style:italic;">vxly.ps@gmail.com</a><br>
+              <a href="https://instagram.com/vxly.ps" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;font-style:italic;">@vxly.ps</a>
+            </div>
+            <div class="s-meta-right">
+              Draft #17<br>
+              <del>draft #07/06/1999</del><br>
+              Roma, 2026
+            </div>
+          </div>
+
+          <!-- CORPO -->
+          <div class="s-body">
+
+            <div class="s-transition-in">FADE IN:</div>
+
+            <!-- SCENA 1 -->
+            <div class="s-slug-wrap">
+              <span class="s-slug">INT. ROMA — UNA STANZA CHE PUZZA DI ACETONE — NOTTE</span>
+            </div>
+
+            <p class="s-action">Luce di monitor. VALERIO FRANCINI (26) davanti a una moviola. Sul pavimento: bobine di Super8, un caffè freddo, la stampa di un frame che non torna.</p>
+            <p class="s-action">Si ferma. Si gira.</p>
+
+            <p class="s-character">VALERIO (V.O.)</p>
+            <p class="s-dialogue">Mi chiamo Valerio Francini.<br>Faccio film perché non so smettere<br>di guardarli.</p>
+
+            <!-- SCENA 2 -->
+            <div class="s-slug-wrap">
+              <span class="s-slug">EXT. INTERNET — QUESTA SCHERMATA — ADESSO</span>
+            </div>
+
+            <p class="s-character">VALERIO (V.O.)</p>
+            <p class="s-dialogue">Vi scrivo perché i vostri lavori<br>mi fanno incazzare — nel senso buono.<br>Quella roba che guardi e pensi:<br>"cazzo, avrei voluto farlo io."</p>
+
+            <p class="s-character">VALERIO (V.O.) (CONT'D)</p>
+            <p class="s-dialogue">Ho 26 anni, sono di Roma.<br>Ho girato music video e cortometraggi —<br>alcuni in 16mm e Super8, perché<br>il digitale non sbaglia mai<br>e a me piace sbagliare nel modo giusto.</p>
+
+            <p class="s-character">VALERIO (V.O.) (CONT'D)</p>
+            <p class="s-dialogue">Ho studiato filosofia. Non per fare<br>il filosofo — per avere qualcosa<br>da dire quando accendo la camera.</p>
+
+            <div class="s-transition-out">CUT TO:</div>
+
+            <!-- SCENA 3 -->
+            <div class="s-slug-wrap">
+              <span class="s-slug">INT. SALA PROIEZIONI — BUIO TOTALE</span>
+            </div>
+
+            <p class="s-action">Il proiettore si accende. Quattro lavori recenti.<br>Guardate voi se vale la pena.</p>
+
+            <p class="s-video-label">// music videos</p>
+
+            <div class="s-video-item">
+              <div class="s-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/Jr6r6PKVDSw" title="MASKARA" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <span class="s-print-url">▶ youtu.be/Jr6r6PKVDSw</span>
+              <div class="s-video-meta">
+                <span class="s-video-title-row">
+                  <strong>MASKARA — Ycon Ydol</strong>
+                  <a href="https://www.imdb.com/it/title/tt41511262/" target="_blank" rel="noopener" title="MASKARA su IMDb" class="s-imdb-badge">
+                    <img src="../images/logos/imdb.svg" alt="IMDb" class="s-imdb-logo">
+                  </a>
+                </span>
+                <span class="s-credits-list">
+                  Regia: Valerio Francini &amp; Davide Paganelli · 16mm + Super8
+                </span>
+                <div class="s-awards-row">
+                  <a href="https://www.emusicawards.eu/blogall/winners-of-season-20/" target="_blank" rel="noopener" class="s-award-item" title="Best Rock Video — Europe Music Video Awards 2025">
+                    <img src="../images/laurel/emva-2025.png" alt="Europe Music Video Award" class="s-award-img">
+                  </a>
+                  <a href="https://www.imdb.com/it/event/ev0039635/2025/1/" target="_blank" rel="noopener" class="s-award-item" title="Toronto International Music Video Festival">
+                    <img src="../images/laurel/timvf-2025.png" alt="TIMVF" class="s-award-img">
+                  </a>
+                  <a href="https://www.tokyoshortfilmfest.com/post/maskara-yconydol-valerio-francini-davide-paganelli" target="_blank" rel="noopener" class="s-award-item" title="Tokyo International Short Film Festival">
+                    <img src="../images/laurel/tisff-2025.png" alt="TISFF" class="s-award-img">
+                  </a>
+                  <span class="s-award-item" title="Roma Short Film Festival">
+                    <img src="../images/laurel/roma-sff-2025.png" alt="Roma Short Film Festival" class="s-award-img">
+                  </span>
+                </div>
+                <div class="s-imdb-event-row">
+                  <a href="https://www.imdb.com/it/event/ev0041088/2025/1/" target="_blank" rel="noopener" class="s-imdb-event-link" title="Europe Music Video Awards 2025 su IMDb">
+                    <img src="../images/logos/imdb.svg" alt="IMDb" style="height:13px;width:auto;filter:none;vertical-align:middle;">
+                    <span>Best Rock Video · Europe Music Video Awards 2025 ↗</span>
+                  </a>
+                </div>
+              </div>
+              <details class="s-full-credits">
+                <summary>crediti completi</summary>
+                <div class="s-credits-table">
+
+                  <div class="s-credits-section">
+                    <div class="s-credits-section-title">regia e sceneggiatura</div>
+                    <div class="s-credits-row"><span class="s-credits-name">Davide Paganelli, Valerio Francini</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">produzione</span><span class="s-credits-name">Malombra Films Ltd</span></div>
+                  </div>
+
+                  <div class="s-credits-section">
+                    <div class="s-credits-section-title">cast</div>
+                    <div class="s-credits-row"><span class="s-credits-role">Rox / Rose / Ress / Romy</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Poliziotto 1</span><span class="s-credits-name">Cristian Bedini</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Poliziotto 2</span><span class="s-credits-name">Darix Folco</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Ragazzo che sbratta</span><span class="s-credits-name">Rick Noah</span></div>
+                  </div>
+
+                  <div class="s-credits-section">
+                    <div class="s-credits-section-title">produzione</div>
+                    <div class="s-credits-row"><span class="s-credits-role">Produttori Esecutivi</span><span class="s-credits-name">Davide Paganelli, Valerio Francini</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Org. Produzione</span><span class="s-credits-name">Elia Ferroli</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Aiuto Regia</span><span class="s-credits-name">Gabriella Ripamonti</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Assistente Regia</span><span class="s-credits-name">Andrea Martinelli</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Assistente Prod.</span><span class="s-credits-name">Alessandro Stroscio</span></div>
+                  </div>
+
+                  <div class="s-credits-section">
+                    <div class="s-credits-section-title">camera</div>
+                    <div class="s-credits-row"><span class="s-credits-role">Cinematographer</span><span class="s-credits-name">Emanuela Licenziato</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Aiuto Operatrice</span><span class="s-credits-name">Niccolò Di Lallo</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Loader</span><span class="s-credits-name">Gabriele Tiddi</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Gaffer</span><span class="s-credits-name">Filippo Doveri</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">B-cam</span><span class="s-credits-name">Luca Spinacara</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Jolly</span><span class="s-credits-name">Marco Marulli</span></div>
+                  </div>
+
+                  <div class="s-credits-section">
+                    <div class="s-credits-section-title">scenografia</div>
+                    <div class="s-credits-row"><span class="s-credits-role">Scenografi</span><span class="s-credits-name">Ludovica Villani, Giulia Ciucciovino</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Attrezzisti</span><span class="s-credits-name">Gabriele Tiddi, Sveva Paonni</span></div>
+                  </div>
+
+                  <div class="s-credits-section">
+                    <div class="s-credits-section-title">costume &amp; make-up</div>
+                    <div class="s-credits-row"><span class="s-credits-role">Costumista</span><span class="s-credits-name">Alessandra Lucarini</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Stylist</span><span class="s-credits-name">Marco Spagnuolo</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Costumi</span><span class="s-credits-name">Movie Palace SRLS</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">MUA / Hair</span><span class="s-credits-name">Martina De Cesaris, Camilla Basile</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Fotografa scena</span><span class="s-credits-name">Anita Occhinegro</span></div>
+                  </div>
+
+                  <div class="s-credits-section">
+                    <div class="s-credits-section-title">post-produzione</div>
+                    <div class="s-credits-row"><span class="s-credits-role">Montaggio</span><span class="s-credits-name">Valerio Francini, Davide Paganelli</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Colorist</span><span class="s-credits-name">Emanuela Licenziato</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Sound Design</span><span class="s-credits-name">Cristian Bedini</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Titoli</span><span class="s-credits-name">Michele Prisco, Thomas Frittella</span></div>
+                  </div>
+
+                  <div class="s-credits-section">
+                    <div class="s-credits-section-title">stunt</div>
+                    <div class="s-credits-row"><span class="s-credits-role">Coordinator</span><span class="s-credits-name">Massimiliano Bianchi</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Stuntman 1</span><span class="s-credits-name">Darix Folco</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Stuntman 2</span><span class="s-credits-name">Gianpaolo Crescenzo</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Stuntman 3</span><span class="s-credits-name">Noemi Bianchi</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Driver Jeep</span><span class="s-credits-name">Gianluca Salpietro</span></div>
+                    <div class="s-credits-row"><span class="s-credits-role">Co-Driver</span><span class="s-credits-name">Giada De Cristofaro</span></div>
+                  </div>
+
+                  <div class="s-credits-section">
+                    <div class="s-credits-section-title">comparse</div>
+                    <div class="s-credits-name">Alexia De Santis · Chiara Conti · Alisia De Santis · Christian Antonini · Edoardo Maria Morrone · Filippo Maria Morrone · Elia Torrisi · Franca Porciello · Francesco Botti · Martina D'Ippolito · Raffaele Pirozzi · Samuele Riccardi · Giorgia Lucantoni · Gionatan Bucci · Sophia Braileanu · Riccardo Pigheddu · Chiara Accardo Palumbo</div>
+                  </div>
+
+                  <div class="s-credits-section">
+                    <div class="s-credits-section-title">formato</div>
+                    <div class="s-credits-name">Shot on Kodak<br>Sviluppato e Digitalizzato da Augustus Color</div>
+                  </div>
+
+                </div>
+              </details>
+            </div>
+
+            <div class="s-video-item">
+              <div class="s-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/hdT2mZ8Vq8o" title="SCATOLA ROSSA" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <span class="s-print-url">▶ youtu.be/hdT2mZ8Vq8o</span>
+              <div class="s-video-meta">
+                <strong>SCATOLA ROSSA</strong>
+                <span class="s-credits-list">
+                  Regia: Valerio Francini, Gabriella Ripamonti &amp; Davide Paganelli
+                </span>
+              </div>
+              <div class="s-moodboard-btn-wrap">
+                <a href="../images/scatola-rossa-moodboard.pdf" target="_blank" rel="noopener" class="s-moodboard-btn">Moodboard — Scatola Rossa</a>
+              </div>
+            </div>
+
+            <p class="s-video-label">// short films</p>
+
+            <div class="s-video-item">
+              <div class="s-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/Oc6n8Mp8Mww" title="VERRÀ LA MORTE" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <span class="s-print-url">▶ youtu.be/Oc6n8Mp8Mww</span>
+              <div class="s-video-meta">
+                <strong>VERRÀ LA MORTE</strong>
+                <span class="s-credits-list">
+                  Experimental Short Film · Regia: Valerio Francini &amp; Davide Paganelli
+                </span>
+              </div>
+            </div>
+
+            <div class="s-video-item">
+              <div class="s-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/-MMFzP4GWtA" title="SEI SOLO" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <span class="s-print-url">▶ youtu.be/-MMFzP4GWtA</span>
+              <div class="s-video-meta">
+                <strong>SEI SOLO</strong>
+                <span class="s-credits-list">
+                  Cortometraggio · Regia: Valerio Francini
+                </span>
+              </div>
+            </div>
+
+            <div class="s-transition-out">CUT TO:</div>
+
+            <!-- SCENA 4 -->
+            <div class="s-slug-wrap">
+              <span class="s-slug">EXT. ROMA — LUCE NATURALE — QUALSIASI ORA</span>
+            </div>
+
+            <div class="s-about-text">
+              <p class="s-character">VALERIO (V.O.)</p>
+              <p class="s-dialogue">Sono questo qui.</p>
+
+              <p class="s-character">VALERIO (V.O.) (CONT'D)</p>
+              <p class="s-dialogue">Non sto cercando un lavoro da eseguire —<br>sto cercando dei collaboratori.<br>La differenza è quella tra<br>un compito e una scelta.</p>
+
+              <p class="s-character">VALERIO (V.O.) (CONT'D)</p>
+              <p class="s-dialogue">Se vi va, ci conosciamo.</p>
+            </div>
+
+            <div class="s-about-photo-center">
+              <img src="../images/ValerioFrancini/ValerioFrancini_PP.jpg" alt="Valerio Francini">
+            </div>
+
+            <div class="s-transition-out">FADE OUT.</div>
+
+          </div>
+
+          <!-- FINE -->
+          <div class="s-end">
+
+            <div class="s-contacts-final">
+              <a href="mailto:vxly.ps@gmail.com">vxly.ps@gmail.com</a><br>
+              <a href="https://instagram.com/vxly.ps" target="_blank" rel="noopener">@vxly.ps</a><br>
+              <a href="../">valeriofrancini.it</a><br>
+              <a href="https://www.imdb.com/name/nm18378315/" target="_blank" rel="noopener" style="text-decoration:none;border:none;line-height:0;">
+                <img src="../images/logos/imdb.svg" alt="IMDb" class="s-imdb-logo s-imdb-contact">
+              </a>
+            </div>
+
+            <p class="s-back">← <a href="../">torna al sito</a></p>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+
+    <!-- FOOTER DEL SITO -->
+    <footer class="portfolio-footer-vf" id="footer-vf">
+      <div class="footer-content-vf">
+        <span class="copyright-vf">©2026 valeriofrancini.it ⭐️🧑🏼‍💻🦈</span>
+        <div class="footer-links-vf" id="footer-links-target-vf">
+          <a href="mailto:vxly.ps@gmail.com">EMAIL ↗</a>
+          <span>·</span>
+          <a href="https://instagram.com/vxly.ps" target="_blank" rel="noopener">INSTAGRAM ↗</a>
+          <span class="footer-imdb-sep">·</span>
+          <a href="https://www.imdb.com/name/nm18378315/" target="_blank" rel="noopener" class="footer-imdb-vf" title="IMDb">
+            <img src="../images/logos/imdb.svg" alt="IMDb" class="imdb-logo-real" style="height:22px;width:auto;filter:none;">
+          </a>
+          <div class="theme-switch-container">
+            <div class="theme-dot light" onclick="setTheme('light')" title="Light Mode"></div>
+            <div class="theme-dot dark" onclick="setTheme('dark')" title="Dark Mode"></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script src="../assets/intro.js"></script>
+<script src="../assets/script.js"></script>
+</body>
+</html>

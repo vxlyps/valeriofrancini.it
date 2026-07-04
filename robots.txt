@@ -1,0 +1,29 @@
+# valeriofrancini.it — tutti i crawler sono benvenuti,
+# inclusi quelli dei motori di ricerca AI.
+
+User-agent: *
+Allow: /
+
+# Crawler AI — esplicitamente benvenuti
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://valeriofrancini.it/sitemap.xml

@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git clone *)",
+      "WebFetch(domain:caroljpeg.github.io)",
+      "WebFetch(domain:davidepaganelli.it)"
+    ]
+  }
+}
