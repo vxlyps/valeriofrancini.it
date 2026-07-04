@@ -71,20 +71,26 @@
 
         /* ── Skip — testo puro, nessun bordo ── */
         var skip = document.createElement('button');
-        skip.textContent = 'skip';
+        skip.textContent = '/ skip';
         skip.style.cssText = [
-            'position:absolute', 'bottom:28px', 'right:28px',
+            'position:absolute', 'bottom:26px', 'right:26px',
             'background:none', 'border:none',
-            'color:rgba(255,255,255,0.5)',
-            "font-family:'Inter',-apple-system,sans-serif",
-            'font-size:0.58rem', 'font-weight:300',
-            'letter-spacing:0.38em', 'text-transform:uppercase',
-            'padding:16px 20px', 'cursor:pointer', 'z-index:3',
-            'opacity:0', 'transition:opacity 0.4s,color 0.25s',
+            'color:rgba(255,255,255,0.6)',
+            "font-family:'Helvetica Neue',Helvetica,Arial,sans-serif",
+            'font-size:15px', 'font-weight:400',
+            'letter-spacing:normal', 'text-transform:uppercase',
+            'padding:10px 14px', 'cursor:pointer', 'z-index:3',
+            'opacity:0', 'transition:opacity 0.4s,color 0.2s,background 0.2s',
             '-webkit-tap-highlight-color:transparent'
         ].join(';');
-        skip.addEventListener('mouseover', function () { skip.style.color = 'rgba(255,255,255,0.9)'; });
-        skip.addEventListener('mouseout',  function () { skip.style.color = 'rgba(255,255,255,0.5)'; });
+        skip.addEventListener('mouseover', function () {
+            skip.style.color = '#fff';
+            skip.style.background = '#E30613';
+        });
+        skip.addEventListener('mouseout', function () {
+            skip.style.color = 'rgba(255,255,255,0.6)';
+            skip.style.background = 'none';
+        });
 
         /* ── Zoom fine video — amplifica lo zoom nel naso ── */
         var zoomStarted = false;

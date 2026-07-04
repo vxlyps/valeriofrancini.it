@@ -1,6 +1,6 @@
 /* =========================================================
    VALERIO FRANCINI — LA MAPPA
-   rosso pellicola su bianco. linee da 1px. niente altro.
+   rosso su bianco. rami = fulmini (linee spezzate, 1px).
    (candidatura-borotalco usa ancora assets/style.css)
    ========================================================= */
 
@@ -8,6 +8,8 @@
     --red: #E30613;
     --bg: #ffffff;
 }
+
+*, *::before, *::after { box-sizing: border-box; }
 
 html, body {
     margin: 0;
@@ -29,7 +31,7 @@ a {
     cursor: text;
 }
 
-/* --- CANVAS (fulmini di pellicola) --- */
+/* --- CANVAS (fulmini) --- */
 #bg {
     position: fixed;
     inset: 0;
@@ -56,6 +58,7 @@ a {
     color: #fff;
     text-decoration: underline;
 }
+.toggle { cursor: pointer; }
 
 #n-root { top: 6vh; left: 5vw; text-decoration: underline; }
 
@@ -70,37 +73,59 @@ a {
 }
 
 /* colonna sezioni */
-#n-about    { top: 24vh; left: 24vw; }
-#n-video    { top: 36vh; left: 24vw; }
-#n-corti    { top: 48vh; left: 24vw; }
-#n-premi    { top: 60vh; left: 24vw; }
-#n-contatti { top: 72vh; left: 24vw; }
+#n-about { top: 26vh; left: 20vw; }
+#n-video { top: 38vh; left: 20vw; }
+#n-photo { top: 50vh; left: 20vw; }
+#n-premi { top: 62vh; left: 20vw; }
 
 /* figli (nascosti finché non si apre il ramo) */
 .kid { display: none; }
 .kid.on { display: block; }
 
-#n-maskara    { top: 31vh; left: 52vw; }
-#n-scatola    { top: 39vh; left: 52vw; }
-#n-verra      { top: 47vh; left: 52vw; }
-#n-seisolo    { top: 55vh; left: 52vw; }
-#n-emva       { top: 63vh; left: 52vw; }
-#n-photovogue { top: 70vh; left: 52vw; }
-#n-wedir      { top: 77vh; left: 52vw; }
-#n-email      { top: 86vh; left: 48vw; }
-#n-ig         { top: 86vh; left: 63vw; }
-#n-imdb       { top: 86vh; left: 78vw; }
+#n-maskara { top: 30vh; left: 48vw; }
+#n-scatola { top: 38vh; left: 48vw; }
+#n-verra   { top: 46vh; left: 48vw; }
+#n-seisolo { top: 54vh; left: 48vw; }
 
+/* righe premio: logo affianco al nome */
+.award {
+    display: none;
+    left: 48vw;
+    font-size: 14px;
+}
+.award.on { display: flex; align-items: center; gap: 10px; }
+.award img {
+    height: 30px;
+    width: auto;
+    display: block;
+}
+.award:hover { background: var(--red); color: #fff; }
+
+#p-emva  { top: 34vh; }
+#p-timvf { top: 43vh; }
+#p-tisff { top: 52vh; }
+#p-roma  { top: 61vh; }
+#p-fuori { top: 70vh; }
+
+/* --- FOOTER HOME --- */
 #credit {
-    position: absolute;
+    position: fixed;
     bottom: 2.5vh;
     left: 5vw;
+    right: 5vw;
     z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2em;
     color: var(--red);
     font-size: 11px;
     text-transform: none;
 }
-#credit a { text-decoration: underline; }
+#credit-left { display: flex; flex-direction: column; gap: 3px; }
+#credit-inspo a { text-decoration: underline; }
+#credit-contacts { display: flex; gap: 16px; text-transform: uppercase; }
+#credit-contacts a:hover { background: var(--red); color: #fff; text-decoration: underline; }
 
 /* --- VF CHE RIMBALZA --- */
 #dvd-link {
@@ -115,78 +140,72 @@ a {
 #dvd-link img { width: 100%; display: block; }
 
 /* =========================================================
-   PAGINE INTERNE (chi sono, progetti, 404)
+   PAGINE INTERNE (about, progetti, photo, 404)
    ========================================================= */
 
 .home-link {
     position: absolute;
     top: 6vh;
     left: 5vw;
-    z-index: 2;
+    z-index: 3;
     color: var(--red);
     font-size: 16px;
     text-decoration: underline;
 }
 .home-link:hover { background: var(--red); color: #fff; }
 
-/* --- CHI SONO --- */
-#profile {
-    position: absolute;
-    top: 18vh;
-    left: 20vw;
-    width: 60vw;
-    height: 60vh;
-    overflow: auto;
+/* --- ABOUT --- */
+body.about { overflow: auto; }
+
+.about-wrap {
+    position: relative;
     z-index: 2;
+    max-width: 1080px;
+    margin: 16vh auto 4vh;
+    padding: 0 5vw;
+}
+.about-label { font-size: 16px; margin: 0 0 26px; }
+
+.about-grid {
+    display: flex;
+    gap: 6vw;
+    align-items: flex-start;
+}
+.about-text {
+    flex: 1.5;
     color: var(--red);
     text-align: justify;
-    font-size: 20px;
+    font-size: 19px;
     line-height: 1.55;
-    text-indent: 5vw;
-    align-content: center;
 }
-
-.hl {
-    background: var(--red);
-    color: #fff;
-    text-decoration: underline;
-}
-a.hl:hover { color: #fff; }
-
-#photo {
-    position: fixed;
-    right: 6vw;
-    bottom: 10vh;
-    width: 200px;
-    display: none;
-    z-index: 3;
+.about-photo-col { flex: 1; max-width: 340px; }
+.about-photo {
+    width: 100%;
+    display: block;
     border: 1px solid var(--red);
 }
-#photo.on { display: block; }
+.about-photo-cap {
+    margin-top: 8px;
+    font-size: 11px;
+    text-transform: none;
+    color: var(--red);
+}
 
-#laurels {
-    position: fixed;
-    left: 5vw;
-    bottom: 3vh;
-    z-index: 2;
+.hl { background: var(--red); color: #fff; text-decoration: underline; }
+a.hl:hover { color: #fff; }
+
+.about-laurels {
     display: flex;
-    gap: 16px;
+    gap: 20px;
     align-items: center;
     flex-wrap: wrap;
-    max-width: 55vw;
+    margin: 5vh 0 3vh;
 }
-#laurels img { height: 32px; width: auto; display: block; }
+.about-laurels img { height: 34px; width: auto; display: block; }
 
-#about-contacts {
-    position: fixed;
-    right: 5vw;
-    bottom: 3vh;
-    z-index: 2;
-    display: flex;
-    gap: 18px;
-}
-#about-contacts a { color: var(--red); font-size: 13px; }
-#about-contacts a:hover { background: var(--red); color: #fff; text-decoration: underline; }
+.about-contacts { display: flex; gap: 18px; flex-wrap: wrap; }
+.about-contacts a { color: var(--red); font-size: 13px; }
+.about-contacts a:hover { background: var(--red); color: #fff; text-decoration: underline; }
 
 /* --- PAGINE PROGETTO --- */
 body.page { overflow: auto; }
@@ -194,43 +213,52 @@ body.page { overflow: auto; }
 .page-wrap {
     position: relative;
     z-index: 2;
-    margin: 16vh 10vw 8vh;
+    max-width: 900px;
+    margin: 16vh auto 8vh;
+    padding: 0 5vw;
     color: var(--red);
 }
 
-.ptitle {
-    font-size: 20px;
-    font-weight: normal;
+.ptitle { font-size: 24px; font-weight: normal; margin: 0 0 10px; }
+.pmeta  { font-size: 13px; margin: 0 0 14px; line-height: 1.5; }
+
+.pawards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 26px;
+    align-items: center;
     margin: 0 0 8px;
 }
-
-.pmeta {
+.pawards a, .pawards span {
+    display: flex;
+    align-items: center;
+    gap: 9px;
     font-size: 12px;
-    margin: 0 0 6px;
+    color: var(--red);
 }
+.pawards a:hover { background: var(--red); color: #fff; }
+.pawards img { height: 30px; width: auto; display: block; }
 
-.plinks { font-size: 12px; margin: 0 0 4px; }
-.plinks a { text-decoration: underline; margin-right: 16px; }
-.plinks a:hover { background: var(--red); color: #fff; }
+.pdesc {
+    font-size: 15px;
+    line-height: 1.6;
+    text-transform: none;
+    max-width: 62ch;
+    margin: 26px 0 0;
+}
 
 .yt-lite {
     position: relative;
     display: block;
-    width: min(100%, 880px);
+    width: 100%;
     aspect-ratio: 16 / 9;
-    margin: 28px 0;
+    margin: 26px 0;
     padding: 0;
     border: 1px solid var(--red);
     background: #000;
     cursor: pointer;
 }
-.yt-lite img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    opacity: 0.92;
-}
+.yt-lite img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.92; }
 .yt-lite-play {
     position: absolute;
     top: 50%;
@@ -243,47 +271,104 @@ body.page { overflow: auto; }
     border-bottom: 17px solid transparent;
 }
 .page-wrap iframe {
-    width: min(100%, 880px);
+    width: 100%;
     aspect-ratio: 16 / 9;
     border: 1px solid var(--red);
     display: block;
-    margin: 28px 0;
+    margin: 26px 0;
 }
 
 .back { font-size: 13px; text-decoration: underline; }
 .back:hover { background: var(--red); color: #fff; }
 
+/* --- PHOTO --- */
+body.photo { overflow: auto; }
+
+.photo-wrap {
+    position: relative;
+    z-index: 2;
+    margin: 16vh 5vw 8vh;
+    color: var(--red);
+}
+.photo-head { font-size: 16px; margin: 0 0 26px; }
+
+.gallery {
+    column-count: 3;
+    column-gap: 14px;
+}
+.gallery figure {
+    margin: 0 0 14px;
+    break-inside: avoid;
+    border: 1px solid var(--red);
+}
+.gallery img { width: 100%; display: block; }
+.gallery figcaption {
+    font-size: 11px;
+    text-transform: none;
+    padding: 6px 8px;
+    border-top: 1px solid var(--red);
+}
+
+/* frame placeholder finché non ci sono foto */
+.frame-ph {
+    break-inside: avoid;
+    margin: 0 0 14px;
+    border: 1px solid var(--red);
+    background: repeating-linear-gradient(
+        45deg, transparent, transparent 9px,
+        rgba(227,6,19,0.06) 9px, rgba(227,6,19,0.06) 18px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--red);
+    font-size: 11px;
+}
+
 /* --- MOBILE --- */
 @media (max-width: 760px) {
-    .node { font-size: 12px; }
-    .home-link { font-size: 13px; }
+    .node { font-size: 13px; }
+    .home-link { font-size: 14px; }
 
-    #n-about, #n-video, #n-corti, #n-premi, #n-contatti { left: 20vw; }
+    #n-about, #n-video, #n-photo, #n-premi { left: 8vw; }
+    #n-about { top: 24vh; }
+    #n-video { top: 34vh; }
+    #n-photo { top: 44vh; }
+    #n-premi { top: 54vh; }
 
-    #n-maskara, #n-scatola, #n-verra, #n-seisolo,
-    #n-emva, #n-photovogue, #n-wedir { left: 46vw; }
+    #n-maskara { top: 28vh; left: 50vw; }
+    #n-scatola { top: 35vh; left: 50vw; }
+    #n-verra   { top: 42vh; left: 50vw; }
+    #n-seisolo { top: 49vh; left: 50vw; }
 
-    #n-email { top: 86vh; left: 38vw; }
-    #n-ig    { top: 86vh; left: 60vw; }
-    #n-imdb  { top: 92vh; left: 38vw; }
+    .award { left: 46vw; font-size: 11px; }
+    .award img { height: 22px; }
+    #p-emva  { top: 30vh; }
+    #p-timvf { top: 40vh; }
+    #p-tisff { top: 50vh; }
+    #p-roma  { top: 60vh; }
+    #p-fuori { top: 70vh; }
 
     #dvd-link { width: 56px; }
 
-    #profile {
-        top: 12vh;
-        left: 7vw;
-        width: 86vw;
-        height: 62vh;
-        font-size: 15px;
-        text-indent: 8vw;
+    #credit {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        bottom: 2vh;
     }
-    #photo { width: 130px; bottom: 16vh; }
-    #laurels { max-width: 90vw; bottom: 10vh; }
-    #laurels img { height: 24px; }
-    #about-contacts { bottom: 3vh; left: 5vw; right: auto; }
 
-    .page-wrap { margin: 14vh 7vw 8vh; }
+    .about-grid { flex-direction: column; gap: 4vh; }
+    .about-photo-col { max-width: 260px; }
+    .about-text { font-size: 16px; }
+    .about-laurels img { height: 26px; }
+
+    .page-wrap { margin: 14vh auto 8vh; }
+    .ptitle { font-size: 20px; }
+
+    .photo-wrap { margin: 13vh 5vw 8vh; }
+    .gallery { column-count: 1; }
 }
 
-/* accessibilità: se l'utente preferisce meno movimento,
-   le linee restano ferme (gestito in map.js) */
+@media (min-width: 761px) and (max-width: 1100px) {
+    .gallery { column-count: 2; }
+}

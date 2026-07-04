@@ -1,9 +1,8 @@
 /* =========================================================
    VALERIO FRANCINI — LA MAPPA
-   Rami: fulmini di pellicola.
-   - tracciato a zigzag (fulmine), fisso per ogni ramo
-   - tratteggio che scorre come pellicola nel proiettore
-   - ogni tanto un ramo sfarfalla per un lampo
+   Rami = fulmini: linee spezzate solide da 1px.
+   Nessun movimento continuo. Quando apri un ramo, il fulmine
+   "scarica" (si disegna a scatto). Hover = lampo sul ramo.
    ========================================================= */
 (function () {
     var RED = '#E30613';
@@ -15,55 +14,75 @@
     var reduceMotion = window.matchMedia &&
         window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    /* [genitore, figlio] */
-    var LINKS = [
+    /* rami sempre visibili: radice -> sezioni */
+    var TRUNK = [
         ['n-root', 'n-about'],
         ['n-root', 'n-video'],
-        ['n-root', 'n-corti'],
-        ['n-root', 'n-premi'],
-        ['n-root', 'n-contatti'],
-        ['n-video', 'n-maskara'],
-        ['n-video', 'n-scatola'],
-        ['n-corti', 'n-verra'],
-        ['n-corti', 'n-seisolo'],
-        ['n-premi', 'n-emva'],
-        ['n-premi', 'n-photovogue'],
-        ['n-premi', 'n-wedir'],
-        ['n-contatti', 'n-email'],
-        ['n-contatti', 'n-ig'],
-        ['n-contatti', 'n-imdb']
+        ['n-root', 'n-photo'],
+        ['n-root', 'n-premi']
     ];
 
-    /* toggle: click sulla sezione → i figli appaiono di colpo, come un cut */
+    /* sezioni espandibili -> figli */
     var GROUPS = {
-        'n-video':    ['n-maskara', 'n-scatola'],
-        'n-corti':    ['n-verra', 'n-seisolo'],
-        'n-premi':    ['n-emva', 'n-photovogue', 'n-wedir'],
-        'n-contatti': ['n-email', 'n-ig', 'n-imdb']
+        'n-video': ['n-maskara', 'n-scatola', 'n-verra', 'n-seisolo'],
+        'n-premi': ['p-emva', 'p-timvf', 'p-tisff', 'p-roma', 'p-fuori']
     };
 
-    Object.keys(GROUPS).forEach(function (tid) {
-        var t = document.getElementById(tid);
+    /* strike[childId] = { t0 } quando il ramo compare */
+    var strike = {};
+    var highlight = {}; /* linkKey -> until (hover) */
+    var animating = false;
+
+    /* --- accordion: un ramo aperto per volta --- */
+    Object.keys(GROUPS).forEach(function (pid) {
+        var t = document.getElementById(pid);
         if (!t) return;
         t.addEventListener('click', function () {
-            GROUPS[tid].forEach(function (kid) {
-                var el = document.getElementById(kid);
-                if (el) el.classList.toggle('on');
+            var opening = !document.getElementById(GROUPS[pid][0]).classList.contains('on');
+            /* chiudi tutti */
+            Object.keys(GROUPS).forEach(function (other) {
+                GROUPS[other].forEach(function (kid) {
+                    document.getElementById(kid).classList.remove('on');
+                });
             });
+            /* apri questo (se non era già aperto) */
+            if (opening) {
+                GROUPS[pid].forEach(function (kid, i) {
+                    var el = document.getElementById(kid);
+                    el.classList.add('on');
+                    strike[kid] = { t0: performance.now() + i * 55 };
+                });
+                kick();
+            } else {
+                render();
+            }
         });
     });
 
+    /* hover: lampo sul ramo che entra nel nodo */
+    function linkKey(a, b) { return a + '>' + b; }
+    [].concat(TRUNK, GROUPS['n-video'].map(function (k) { return ['n-video', k]; }),
+        GROUPS['n-premi'].map(function (k) { return ['n-premi', k]; }))
+        .forEach(function (pair) {
+            var el = document.getElementById(pair[1]);
+            if (!el) return;
+            el.addEventListener('mouseenter', function () {
+                highlight[linkKey(pair[0], pair[1])] = performance.now() + 260;
+                kick();
+            });
+        });
+
     function resize() {
         var dpr = window.devicePixelRatio || 1;
-        canvas.width = window.innerWidth * dpr;
-        canvas.height = window.innerHeight * dpr;
+        canvas.width = Math.round(window.innerWidth * dpr);
+        canvas.height = Math.round(window.innerHeight * dpr);
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        render();
     }
     window.addEventListener('resize', resize);
-    resize();
 
     /* random deterministico: lo zigzag di ogni ramo è sempre lo stesso */
-    function seededRand(seed) {
+    function seeded(seed) {
         return function () {
             seed |= 0;
             seed = (seed + 0x6D2B79F5) | 0;
@@ -73,17 +92,18 @@
         };
     }
 
+    /* punti di un fulmine da A a B */
     function boltPoints(x1, y1, x2, y2, seed) {
-        var rnd = seededRand(seed);
-        var pts = [[x1, y1]];
-        var segs = 5;
+        var rnd = seeded(seed);
         var dx = x2 - x1, dy = y2 - y1;
         var len = Math.hypot(dx, dy) || 1;
         var nx = -dy / len, ny = dx / len;
-        var maxAmp = Math.min(13, len * 0.05); /* rami corti = zigzag più discreto */
+        var segs = Math.max(3, Math.min(7, Math.round(len / 46)));
+        var maxAmp = Math.min(11, len * 0.05);
+        var pts = [[x1, y1]];
         for (var i = 1; i < segs; i++) {
             var t = i / segs;
-            var amp = maxAmp * Math.sin(Math.PI * t); /* meno ampiezza vicino ai capi */
+            var amp = maxAmp * Math.sin(Math.PI * t);   /* si stringe ai due capi */
             var off = (rnd() * 2 - 1) * amp;
             pts.push([x1 + dx * t + nx * off, y1 + dy * t + ny * off]);
         }
@@ -91,60 +111,110 @@
         return pts;
     }
 
-    /* sfarfallio: ogni ramo sparisce per ~80ms ogni 3-9 secondi */
-    var flick = LINKS.map(function () {
-        return { until: 0, next: performance.now() + 2000 + Math.random() * 7000 };
-    });
+    /* disegna un fulmine, opzionalmente rivelato solo fino a `reveal` (0..1) */
+    function drawBolt(pts, reveal, bright) {
+        /* lunghezza totale */
+        var segLen = [], total = 0;
+        for (var i = 1; i < pts.length; i++) {
+            var l = Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]);
+            segLen.push(l); total += l;
+        }
+        var target = reveal >= 1 ? total : reveal * total;
 
-    function visible(el) {
-        return el.offsetParent !== null;
+        ctx.strokeStyle = RED;
+        ctx.lineWidth = bright ? 2 : 1;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.globalAlpha = bright ? 1 : 0.95;
+        ctx.beginPath();
+        ctx.moveTo(pts[0][0], pts[0][1]);
+        var acc = 0;
+        for (var j = 1; j < pts.length; j++) {
+            var l2 = segLen[j - 1];
+            if (acc + l2 <= target) {
+                ctx.lineTo(pts[j][0], pts[j][1]);
+                acc += l2;
+            } else {
+                var f = (target - acc) / l2;
+                ctx.lineTo(
+                    pts[j - 1][0] + (pts[j][0] - pts[j - 1][0]) * f,
+                    pts[j - 1][1] + (pts[j][1] - pts[j - 1][1]) * f
+                );
+                break;
+            }
+        }
+        ctx.stroke();
+        ctx.globalAlpha = 1;
     }
 
-    function draw(now) {
-        ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-        ctx.strokeStyle = RED;
-        ctx.lineWidth = 1;
-        ctx.setLineDash([7, 5]);
-        var offset = reduceMotion ? 0 : -((now / 40) % 12);
+    function visible(el) { return el && el.offsetParent !== null; }
 
-        for (var i = 0; i < LINKS.length; i++) {
-            var a = document.getElementById(LINKS[i][0]);
-            var b = document.getElementById(LINKS[i][1]);
-            if (!a || !b || !visible(a) || !visible(b)) continue;
+    function anchors(a, b) {
+        var ra = a.getBoundingClientRect(), rb = b.getBoundingClientRect();
+        return [ra.left + 6, ra.bottom + 2, rb.left - 10, rb.top + rb.height / 2];
+    }
 
-            if (!reduceMotion) {
-                var f = flick[i];
-                if (now > f.next) {
-                    f.until = now + 60 + Math.random() * 70;
-                    f.next = now + 3000 + Math.random() * 6000;
+    function activeLinks() {
+        var links = TRUNK.slice();
+        Object.keys(GROUPS).forEach(function (pid) {
+            GROUPS[pid].forEach(function (kid) {
+                if (document.getElementById(kid).classList.contains('on')) {
+                    links.push([pid, kid]);
                 }
-                if (now < f.until) continue;
+            });
+        });
+        return links;
+    }
+
+    function render(now) {
+        now = now || performance.now();
+        ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+        var stillAnimating = false;
+        var links = activeLinks();
+
+        for (var i = 0; i < links.length; i++) {
+            var a = document.getElementById(links[i][0]);
+            var b = document.getElementById(links[i][1]);
+            if (!visible(a) || !visible(b)) continue;
+
+            var an = anchors(a, b);
+            var seed = i * 131 + links[i][1].length * 17 + 7;
+            var pts = boltPoints(an[0], an[1], an[2], an[3], seed);
+
+            /* scarica in ingresso */
+            var reveal = 1;
+            var st = strike[links[i][1]];
+            if (st && !reduceMotion) {
+                var d = now - st.t0;
+                if (d < 0) { reveal = 0; stillAnimating = true; }
+                else if (d < 220) { reveal = d / 220; stillAnimating = true; }
+                else { delete strike[links[i][1]]; }
             }
 
-            var ra = a.getBoundingClientRect();
-            var rb = b.getBoundingClientRect();
-            var pts = boltPoints(
-                ra.left + 10, ra.bottom + 3,
-                rb.left - 12, rb.top + rb.height / 2,
-                i * 97 + 13
-            );
-
-            ctx.lineDashOffset = offset;
-            ctx.beginPath();
-            ctx.moveTo(pts[0][0], pts[0][1]);
-            for (var j = 1; j < pts.length; j++) {
-                ctx.lineTo(pts[j][0], pts[j][1]);
+            /* lampo hover */
+            var hk = highlight[linkKey(links[i][0], links[i][1])];
+            var bright = false;
+            if (hk) {
+                if (now < hk) { bright = true; stillAnimating = true; }
+                else delete highlight[linkKey(links[i][0], links[i][1])];
             }
-            ctx.stroke();
+
+            if (reveal > 0) drawBolt(pts, reveal, bright);
         }
 
-        if (!reduceMotion) requestAnimationFrame(draw);
+        if (stillAnimating) { animating = true; requestAnimationFrame(render); }
+        else animating = false;
     }
 
-    requestAnimationFrame(draw);
-    /* con reduced-motion: un solo frame statico, ridisegnato al resize/click */
-    if (reduceMotion) {
-        window.addEventListener('resize', function () { requestAnimationFrame(draw); });
-        document.addEventListener('click', function () { requestAnimationFrame(draw); });
+    function kick() { if (!animating) { animating = true; requestAnimationFrame(render); } }
+
+    /* primo disegno quando l'intro non copre più la pagina */
+    function start() {
+        if (document.getElementById('vf-intro-overlay')) {
+            setTimeout(start, 300);
+            return;
+        }
+        resize();
     }
+    start();
 })();
