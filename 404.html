@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Sicurezza: la 404 è servita per qualsiasi path mancante, quindi
+         niente asset relativi: script inline consentito solo qui -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>404 — Valerio Francini</title>
     <meta name="robots" content="noindex">
     <link rel="icon" href="/images/favicon-upsidedown.png" type="image/png">
@@ -26,6 +30,11 @@
 
 <footer style="position:fixed; bottom:2vh; left:50%; transform:translateX(-50%); font-size:11px; text-transform:none; white-space:nowrap; text-align:center; opacity:0.75;">/ &copy;2026 valeriofrancini.it ⭐️🧑🏼‍💻🦈 &mdash; roma &mdash; website inspired by the crazy mind of <a href="https://caroljpeg.github.io/Andrea_Martinelli/" target="_blank" rel="noopener">andrea martinelli</a></footer>
 <script>
+/* anti-clickjacking */
+if (window.top !== window.self) {
+    try { window.top.location.replace(window.self.location.href); }
+    catch (e) { document.documentElement.style.display = 'none'; }
+}
 /* su github.io il sito vive in /<repo>/ */
 if (location.hostname.endsWith('github.io')) {
     document.getElementById('home').href = '/' + location.pathname.split('/')[1] + '/';

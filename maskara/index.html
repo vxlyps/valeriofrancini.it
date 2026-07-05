@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Sicurezza: CSP (niente script esterni, embed solo YouTube), referrer minimale, scudo anti-clickjacking -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.ytimg.com data:; media-src 'self'; frame-src https://www.youtube.com https://www.youtube-nocookie.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <script src="../assets/guard.js"></script>
+
     <title>MASKARA — Ycon Ydol · Valerio Francini</title>
     <meta name="description" content="MASKARA — Ycon Ydol. Music video girato interamente in 16mm e Super8. Best Rock Video agli Europe Music Video Awards 2025. Regia di Valerio Francini e Davide Paganelli.">
 

@@ -1,10 +1,13 @@
 # valeriofrancini.it — tutti i crawler sono benvenuti,
 # inclusi quelli dei motori di ricerca AI.
 
+# Motori di ricerca classici: tutto il sito sì, ma il dossier
+# per le AI (llms.txt) non va indicizzato nei risultati di ricerca.
 User-agent: *
 Allow: /
+Disallow: /llms.txt
 
-# Crawler AI — esplicitamente benvenuti
+# Crawler AI — esplicitamente benvenuti, llms.txt incluso
 User-agent: GPTBot
 Allow: /
 
@@ -20,10 +23,22 @@ Allow: /
 User-agent: anthropic-ai
 Allow: /
 
+User-agent: claude-web
+Allow: /
+
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Perplexity-User
+Allow: /
+
 User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
 Allow: /
 
 Sitemap: https://valeriofrancini.it/sitemap.xml

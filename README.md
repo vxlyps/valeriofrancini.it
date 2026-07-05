@@ -23,11 +23,28 @@ sfarfallio occasionale. Nella stessa famiglia di
 python3 -m http.server 8080
 ```
 
+## Sicurezza
+
+- **CSP** (`meta http-equiv` in ogni pagina): script solo dal sito, embed solo
+  YouTube, immagini solo dal sito + thumbnail YouTube, niente object/form.
+  GitHub Pages non permette header HTTP custom, quindi la policy viaggia nel markup.
+- **Anti-clickjacking**: `assets/guard.js` (la 404 lo ha inline) — se il sito viene
+  caricato in un iframe altrui, se ne esce.
+- **Referrer-Policy**: `strict-origin-when-cross-origin` su ogni pagina.
+- **`.well-known/security.txt`** (RFC 9116): contatto per segnalazioni di vulnerabilità.
+- **robots.txt**: `Disallow: /llms.txt` per i motori di ricerca classici (non
+  compare su Google), con Allow esplicito per i crawler AI (GPTBot, ClaudeBot,
+  PerplexityBot, ecc.) che sono i destinatari del file.
+- Tutti i link esterni hanno `rel="noopener"`; zero librerie JS esterne.
+- Nota onesta: il sito è statico e la repo è pubblica — chi conosce la
+  convenzione può sempre digitare /llms.txt a mano. Il file però non è linkato
+  da nessuna pagina, non è nella sitemap e non è indicizzato dai motori.
+
 ## Checklist go-live (quando la v2 è approvata)
 
 1. Rimuovere `<meta name="robots" content="noindex">` da: `index.html`, `chi-sono/index.html`, `maskara/index.html`, `scatola-rossa/index.html`, `verra-la-morte/index.html`, `sei-solo/index.html` (cercare il commento `STAGING`).
 2. Nella **vecchia** repo (`vxlyps/valeriofrancini.it`): Settings → Pages → rimuovere il custom domain.
-3. In **questa** repo: Settings → Pages → custom domain `valeriofrancini.it` + Enforce HTTPS. Aggiungere il file `CNAME` con contenuto `valeriofrancini.it`.
+3. In **questa** repo: Settings → Pages → custom domain `valeriofrancini.it` + **Enforce HTTPS** (importante: forza il redirect https). Aggiungere il file `CNAME` con contenuto `valeriofrancini.it`.
 4. Il DNS non si tocca (punta già a GitHub Pages).
 5. Verificare https://valeriofrancini.it e ricontrollare la Search Console.
 6. Archiviare la vecchia repo (Settings → Archive) come backup.

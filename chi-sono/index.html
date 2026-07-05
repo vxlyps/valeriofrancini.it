@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Sicurezza: CSP (niente script esterni, embed solo YouTube), referrer minimale, scudo anti-clickjacking -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https://i.ytimg.com data:; media-src 'self'; frame-src https://www.youtube.com https://www.youtube-nocookie.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <script src="../assets/guard.js"></script>
+
     <title>About — Valerio Francini · Regista indipendente, Roma</title>
     <meta name="description" content="Valerio Francini è un regista e sceneggiatore indipendente romano. Gira music video e cortometraggi in pellicola 16mm e Super8. Best Rock Video agli Europe Music Video Awards 2025 con MASKARA.">
     <meta name="author" content="Valerio Francini">

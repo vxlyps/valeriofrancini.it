@@ -1,0 +1,5 @@
+# valeriofrancini.it — security contact (RFC 9116)
+Contact: mailto:vxly.ps@gmail.com
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: it, en
+Canonical: https://valeriofrancini.it/.well-known/security.txt
