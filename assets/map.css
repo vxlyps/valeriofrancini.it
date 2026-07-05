@@ -101,11 +101,12 @@ a, button, .toggle, .yt-lite { cursor: pointer; }
 .award img { height: 24px; width: auto; display: block; }
 .award:hover { background: var(--red); color: #fff; }
 
-#p-emva  { top: 56vh; }
-#p-timvf { top: 62vh; }
-#p-tisff { top: 68vh; }
-#p-roma  { top: 74vh; }
-#p-fuori { top: 80vh; }
+#p-emva   { top: 54vh; }
+#p-timvf  { top: 60vh; }
+#p-tisff  { top: 66vh; }
+#p-roma   { top: 72vh; }
+#p-prisma { top: 78vh; }
+#p-fuori  { top: 84vh; }
 
 /* rami contacts: scaletta in basso a destra (come i g di paganelli) */
 #c-email { top: 79vh; left: 72vw; }
@@ -350,11 +351,12 @@ body.photo { overflow: auto; }
     #n-awards { top: 59vh; left: 3vw; }
     .award { font-size: 9.5px; gap: 6px; }
     .award img { height: 14px; }
-    #p-emva  { top: 66vh; left: 30vw; }
-    #p-timvf { top: 72vh; left: 34vw; }
-    #p-tisff { top: 78vh; left: 38vw; }
-    #p-roma  { top: 84vh; left: 42vw; }
-    #p-fuori { top: 90vh; left: 46vw; }
+    #p-emva   { top: 63vh; left: 30vw; }
+    #p-timvf  { top: 68vh; left: 34vw; }
+    #p-tisff  { top: 73vh; left: 38vw; }
+    #p-roma   { top: 78vh; left: 42vw; }
+    #p-prisma { top: 83vh; left: 46vw; }
+    #p-fuori  { top: 88vh; left: 50vw; }
 
     /* contacts — in basso a destra (schema c1/c2 di paganelli) */
     #n-contacts { top: 59vh; left: 58vw; }

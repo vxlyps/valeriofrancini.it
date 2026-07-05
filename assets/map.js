@@ -18,7 +18,7 @@
     var sections = sectionIds.map($);
     var branches = {
         'n-video':    ['n-maskara', 'n-scatola', 'n-verra', 'n-seisolo'].map($),
-        'n-awards':   ['p-emva', 'p-timvf', 'p-tisff', 'p-roma', 'p-fuori'].map($),
+        'n-awards':   ['p-emva', 'p-timvf', 'p-tisff', 'p-roma', 'p-prisma', 'p-fuori'].map($),
         'n-contacts': ['c-email', 'c-ig'].map($)
     };
 
