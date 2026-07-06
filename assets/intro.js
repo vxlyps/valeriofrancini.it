@@ -17,14 +17,26 @@
 
     function build() {
 
-        /* ── Overlay ── */
-        var overlay = document.createElement('div');
-        overlay.id = 'vf-intro-overlay';
-        overlay.style.cssText = [
-            'position:fixed', 'inset:0', 'z-index:999999',
-            'background:#000', 'opacity:1',
-            'transition:opacity ' + FADE_MS + 'ms ease'
-        ].join(';');
+        /* ── Overlay ──
+           Riusa il velo nero già dipinto nell'HTML (#vf-boot, vedi
+           assets/boot.js): così il nero copre la pagina dal primissimo
+           istante, anche su connessioni lente, prima ancora che questo
+           script arrivi. Se per qualche motivo manca (pagina senza il
+           velo statico), ne crea uno come prima. */
+        var overlay = document.getElementById('vf-boot');
+        if (overlay) {
+            overlay.id = 'vf-intro-overlay';
+            overlay.style.opacity = '1';
+            overlay.style.transition = 'opacity ' + FADE_MS + 'ms ease';
+        } else {
+            overlay = document.createElement('div');
+            overlay.id = 'vf-intro-overlay';
+            overlay.style.cssText = [
+                'position:fixed', 'inset:0', 'z-index:999999',
+                'background:#000', 'opacity:1',
+                'transition:opacity ' + FADE_MS + 'ms ease'
+            ].join(';');
+        }
 
         /* ── Video ── */
         var video = document.createElement('video');

@@ -103,9 +103,9 @@ a, button, .toggle, .yt-lite { cursor: pointer; }
 
 #p-emva   { top: 54vh; }
 #p-timvf  { top: 60vh; }
-#p-tisff  { top: 66vh; }
-#p-roma   { top: 72vh; }
-#p-prisma { top: 78vh; }
+#p-prisma { top: 66vh; }
+#p-tisff  { top: 72vh; }
+#p-roma   { top: 78vh; }
 #p-fuori  { top: 84vh; }
 
 /* rami contacts: scaletta in basso a destra (come i g di paganelli) */
@@ -353,9 +353,9 @@ body.photo { overflow: auto; }
     .award img { height: 14px; }
     #p-emva   { top: 63vh; left: 30vw; }
     #p-timvf  { top: 68vh; left: 34vw; }
-    #p-tisff  { top: 73vh; left: 38vw; }
-    #p-roma   { top: 78vh; left: 42vw; }
-    #p-prisma { top: 83vh; left: 46vw; }
+    #p-prisma { top: 73vh; left: 38vw; }
+    #p-tisff  { top: 78vh; left: 42vw; }
+    #p-roma   { top: 83vh; left: 46vw; }
     #p-fuori  { top: 88vh; left: 50vw; }
 
     /* contacts — in basso a destra (schema c1/c2 di paganelli) */

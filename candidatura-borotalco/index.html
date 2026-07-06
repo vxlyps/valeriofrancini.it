@@ -533,6 +533,11 @@
 </head>
 <body>
 
+<!-- Velo nero statico: vedi assets/boot.js — evita che il sito appaia
+     un istante prima dell'intro su connessioni lente. -->
+<div id="vf-boot" style="position:fixed;inset:0;z-index:999999;background:#000;"></div>
+<script src="../assets/boot.js"></script>
+
 <div class="portfolio-fullwidth-vf">
   <div class="portfolio-container-vf">
 

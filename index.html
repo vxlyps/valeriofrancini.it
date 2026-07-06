@@ -64,9 +64,9 @@
           "award": [
             "Best Rock Video — Europe Music Video Awards 2025 (MASKARA)",
             "Official Selection — Toronto International Music Video Festival 2025",
+            "Nomination — Best Music Video, Prisma Awards (MASKARA)",
             "Official Selection — Tokyo International Short Film Festival 2025",
             "Official Selection — Roma Short Film Festival 2025",
-            "Nomination — Best Music Video, Prisma Awards (MASKARA)",
             "Fuoricampo Cinema Giovane FilmFest 2017"
           ],
           "sameAs": [
@@ -148,6 +148,15 @@
 </head>
 <body class="home">
 
+<!-- Velo nero statico: dipinto dal primissimo istante (parte dell'HTML,
+     non serve aspettare nessuno script), così su connessioni lente non si
+     vede mai il sito in anteprima prima dell'intro. intro.js lo riusa per
+     l'animazione; se l'intro è già stata vista o intro.js non arriva mai,
+     viene tolto subito da assets/boot.js (esterno: la CSP blocca gli
+     script inline). -->
+<div id="vf-boot" style="position:fixed;inset:0;z-index:999999;background:#000;"></div>
+<script src="assets/boot.js"></script>
+
 <canvas id="bg"></canvas>
 
 <a id="dvd-link" href="chi-sono/">
@@ -173,12 +182,12 @@
     <img src="images/laurel/emva-2025.png" alt=""> emva 2025 &mdash; best rock video</a>
 <a class="node kid award" id="p-timvf" href="https://www.imdb.com/it/event/ev0039635/2025/1/" target="_blank" rel="noopener">
     <img src="images/laurel/timvf-2025.png" alt=""> toronto imvf 2025</a>
+<span class="node kid award" id="p-prisma">
+    <img src="images/laurel/prisma-awards.png" alt=""> prisma awards &mdash; best music video</span>
 <a class="node kid award" id="p-tisff" href="https://www.tokyoshortfilmfest.com/post/maskara-yconydol-valerio-francini-davide-paganelli" target="_blank" rel="noopener">
     <img src="images/laurel/tisff-2025.png" alt=""> tokyo isff 2025</a>
 <span class="node kid award" id="p-roma">
     <img src="images/laurel/roma-sff-2025.png" alt=""> roma sff 2025</span>
-<span class="node kid award" id="p-prisma">
-    <img src="images/laurel/prisma-awards.png" alt=""> prisma awards &mdash; best music video</span>
 <a class="node kid award" id="p-fuori" href="https://www.fuoricampofilmfest.com/news" target="_blank" rel="noopener">
     <img src="images/laurel/FuoricampoFilmFest_ValerioFrancini.png" alt=""> fuoricampo 2017</a>
 
