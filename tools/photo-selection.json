@@ -1,0 +1,282 @@
+[
+ {
+  "id": "vanguard",
+  "title": "vanguard",
+  "label": "vanguard — birds of pray",
+  "pos": "tl",
+  "items": [
+   {
+    "src": "VANGUARD BOP/Moodboard_BOP1.png",
+    "alt": "Birds of Pray: pagina di apertura dell'editoriale su Vanguard, ritratto in bianco e nero di un modello con il cappello"
+   },
+   {
+    "src": "VANGUARD BOP/vanguard bop1.png",
+    "alt": "Birds of Pray, capitolo 3: pagine dell'editoriale su Vanguard con modelli nel bosco di notte"
+   },
+   {
+    "src": "VANGUARD BOP/vanguard bop2.png",
+    "alt": "Editoriale Vanguard Birds of Pray: due modelli in abiti trasparenti vicino a un lago al crepuscolo"
+   },
+   {
+    "src": "VANGUARD BOP/vanguard bop3.png",
+    "alt": "Editoriale Vanguard Birds of Pray: modelli in abiti neri e bianchi all'aperto, in bianco e nero"
+   },
+   {
+    "src": "VANGUARD BOP/vanguard bop4.png",
+    "alt": "Editoriale Vanguard Birds of Pray: ritratto scuro e figura in abito bianco sulla riva di un lago"
+   },
+   {
+    "src": "VANGUARD BOP/vanguard bop5.png",
+    "alt": "Editoriale Vanguard Birds of Pray: modella in abito nero in un prato e paesaggio in bianco e nero"
+   }
+  ]
+ },
+ {
+  "id": "personal",
+  "title": "personal",
+  "label": "personal",
+  "pos": "tr",
+  "items": [
+   {
+    "src": "BTS/me/img20201209_0007.jpg",
+    "alt": "Ragazzo seduto sui binari del treno, fotografia analogica in bianco e nero"
+   },
+   {
+    "src": "BTS/me/img20211124_16430642.jpg",
+    "alt": "Ragazzo con la macchina fotografica davanti a un canale"
+   },
+   {
+    "src": "Live_Ngaty/Ngaty_live1.jpg",
+    "alt": "Rapper con cappellino e microfono sul palco, in bianco e nero"
+   },
+   {
+    "src": "BTS/me/img20211125_14445200.jpg",
+    "alt": "Ragazzo biondo seduto in un vagone della metropolitana con uno zaino rosso"
+   },
+   {
+    "src": "Eszter x Vogue.jpg",
+    "alt": "Ritratto di una ragazza con la treccia che guarda in basso, pubblicato su PhotoVogue"
+   },
+   {
+    "src": "BTS/me/img20211223_20380057.jpg",
+    "alt": "Due ragazzi abbracciati di notte, uno fuma, su pellicola"
+   },
+   {
+    "src": "BTS/me/img20220325_08595281.jpg",
+    "alt": "Ritratto di un ragazzo con la barba e un giaccone a righe per strada"
+   },
+   {
+    "src": "Live_Ngaty/Ngaty_live2.jpg",
+    "alt": "Cantante con cappellino che urla nel microfono tra il fumo, in bianco e nero"
+   },
+   {
+    "src": "NEW PIC/08102017-IMG_8451.jpg",
+    "alt": "Due ragazzini in piedi su una scala esterna, in bianco e nero"
+   },
+   {
+    "src": "NEW PIC/croazia047.jpg",
+    "alt": "Due ragazzini ripresi dal basso su una scalinata, in bianco e nero"
+   },
+   {
+    "src": "NEW PIC/croazia024.jpg",
+    "alt": "Silhouette di una ragazza in una stanza con luce al neon verde"
+   },
+   {
+    "src": "Live_Ngaty/Ngaty_live3.jpg",
+    "alt": "Pubblico con le braccia alzate a un concerto, in bianco e nero"
+   },
+   {
+    "src": "NEW PIC/croazia065.jpg",
+    "alt": "Stanza buia con graffiti e una lampadina accesa, in bianco e nero"
+   },
+   {
+    "src": "NEW PIC/vale bew.jpg",
+    "alt": "Ritratto in bianco e nero di un ragazzo davanti a un muro di graffiti"
+   },
+   {
+    "src": "vogue Valerio.jpg",
+    "alt": "Silhouette in bianco e nero di un ragazzo davanti a una finestra, pubblicata su PhotoVogue"
+   },
+   {
+    "src": "analog pic x sito/img20201217_0020.jpg",
+    "alt": "Ragazza bionda con i capelli sul viso in un bosco, su pellicola"
+   },
+   {
+    "src": "analog pic x sito/img20201217_0022.jpg",
+    "alt": "Ragazza bionda in un bosco con il sole tra gli alberi, su pellicola"
+   },
+   {
+    "src": "Live_Ngaty/Ngaty_live4.jpg",
+    "alt": "Cantante con cappellino al microfono nel buio, in bianco e nero"
+   },
+   {
+    "src": "analog pic x sito/img20211125_21593252.jpg",
+    "alt": "Ritratto di profilo di una ragazza in un locale con luci calde, su pellicola"
+   }
+  ]
+ },
+ {
+  "id": "backstage",
+  "title": "backstage",
+  "label": "backstage",
+  "pos": "bl",
+  "items": [
+   {
+    "src": "BTS/DSCF3577.JPG",
+    "alt": "Backstage: operatore con monitor di fronte a un'attrice nella vasca da bagno"
+   },
+   {
+    "src": "BTS/DSCF3631.JPG",
+    "alt": "Backstage di un set: una ragazza nella vasca con luce rosa e un operatore con la camera"
+   },
+   {
+    "src": "BTS/DSCF6344.JPG",
+    "alt": "Backstage: operatore e performer in una stanza con luci blu e fumo"
+   },
+   {
+    "src": "BTS/DSCF6867.JPG",
+    "alt": "Backstage notturno: troupe in un sottopasso con luce gialla"
+   },
+   {
+    "src": "BTS/DSCF6877.JPG",
+    "alt": "Backstage: operatori con la camera in un sottopasso notturno, attrice a terra"
+   },
+   {
+    "src": "BTS/DSCF6878.JPG",
+    "alt": "Backstage: tre persone in un sottopasso notturno, due con le cuffie"
+   },
+   {
+    "src": "BTS/IMG_1688_Original.PNG",
+    "alt": "Backstage di uno shooting con fondale rosa: due persone si passano una rosa"
+   },
+   {
+    "src": "BTS/Schermata 2024-04-02 alle 16.57.10.png",
+    "alt": "Backstage di un set in studio: troupe attorno a un carrello camera con luci"
+   },
+   {
+    "src": "BTS/20072018-DSC08045.jpg",
+    "alt": "Backstage: ragazzi in posa con una videocamera in una palestra"
+   }
+  ]
+ },
+ {
+  "id": "stuff",
+  "title": "stuff",
+  "label": "stuff",
+  "pos": "br",
+  "items": [
+   {
+    "src": "FRAME VIDEO/frame_video_Valerio_Francini10.png",
+    "alt": "Fotogramma: ragazza con fascia in testa e acchiappasogni tra luci colorate"
+   },
+   {
+    "src": "''sizefive'' magazine foto vecchie/jpg/1(1).jpg",
+    "alt": "Mano anziana in primo piano su una maglia giallorossa"
+   },
+   {
+    "src": "FRAME VIDEO/frame_video_Valerio_Francini11.png",
+    "alt": "Fotogramma: ragazza sdraiata in luce rossa e fumo"
+   },
+   {
+    "src": "FRAME VIDEO/frame_video_Valerio_Francini13.png",
+    "alt": "Fotogramma: ragazzo a torso nudo sdraiato in luce rossa"
+   },
+   {
+    "src": "''sizefive'' magazine foto vecchie/jpg/1(2).jpg",
+    "alt": "Ritratto di una persona anziana con i capelli argentati e la maglia della Roma"
+   },
+   {
+    "src": "FRAME VIDEO/frame_video_Valerio_Francini14.png",
+    "alt": "Fotogramma: ragazzo a torso nudo con il braccio sul viso su plastica rossa"
+   },
+   {
+    "src": "FRAME VIDEO/frame_video_Valerio_Francini15.png",
+    "alt": "Fotogramma: ragazzo vestito di bianco in una stanza di plastica trasparente"
+   },
+   {
+    "src": "''sizefive'' magazine foto vecchie/jpg/1.jpg",
+    "alt": "Ritratto di una persona anziana in sedia a rotelle con la maglia del Newcastle"
+   },
+   {
+    "src": "FRAME VIDEO/frame_video_Valerio_Francini19.png",
+    "alt": "Fotogramma: ragazzo in bianco con le braccia alzate in una stanza di plastica"
+   },
+   {
+    "src": "FRAME VIDEO/frame_video_Valerio_Francini20.png",
+    "alt": "Fotogramma: ragazzo in bianco con la mano sul viso, sfondo di plastica"
+   },
+   {
+    "src": "''sizefive'' magazine foto vecchie/jpg/2(1).jpg",
+    "alt": "Ritratto ravvicinato di una donna anziana con la maglia del Lecce"
+   },
+   {
+    "src": "FRAME VIDEO/frame_video_Valerio_Francini21.png",
+    "alt": "Fotogramma: profilo di un ragazzo con gli occhi chiusi nella plastica blu"
+   },
+   {
+    "src": "FRAME VIDEO/frame_video_Valerio_Francini22.png",
+    "alt": "Fotogramma: volto di un ragazzo avvolto dalla plastica blu"
+   },
+   {
+    "src": "FRAME VIDEO/frame_video_Valerio_Francini24.png",
+    "alt": "Fotogramma: ragazzo accovacciato con un palloncino rosso su plastica bianca"
+   },
+   {
+    "src": "''sizefive'' magazine foto vecchie/jpg/2.jpg",
+    "alt": "Due persone anziane in maglia della Roma si tengono per mano in un corridoio"
+   },
+   {
+    "src": "FRAME VIDEO/frame_video_Valerio_Francini25.png",
+    "alt": "Fotogramma: ragazzo con orecchini seduto sotto un palloncino rosso"
+   },
+   {
+    "src": "FRAME VIDEO/frame_video_Valerio_Francini2.jpg",
+    "alt": "Fotogramma in pellicola: mano sopra l'acqua di un lago"
+   },
+   {
+    "src": "FRAME VIDEO/frame_video_Valerio_Francini3.jpg",
+    "alt": "Fotogramma in pellicola: croce su una collina"
+   },
+   {
+    "src": "''sizefive'' magazine foto vecchie/jpg/3(1).jpg",
+    "alt": "Ritratto di una donna anziana sorridente con occhiali e maglia bianconera"
+   },
+   {
+    "src": "FRAME VIDEO/frame_video_Valerio_Francini30.png",
+    "alt": "Fotogramma: occhio in primo piano in luce magenta"
+   },
+   {
+    "src": "FRAME VIDEO/frame_video_Valerio_Francini31.png",
+    "alt": "Fotogramma: ragazza che beve, incorniciata in un collage di luci"
+   },
+   {
+    "src": "FRAME VIDEO/frame_video_Valerio_Francini34.png",
+    "alt": "Fotogramma: ragazza bionda nella vasca con la mano sul viso, luce bianca"
+   },
+   {
+    "src": "''sizefive'' magazine foto vecchie/jpg/3.jpg",
+    "alt": "Donna anziana in sedia a rotelle con maglia e sciarpa del Lecce"
+   },
+   {
+    "src": "FRAME VIDEO/frame_video_Valerio_Francini37.png",
+    "alt": "Fotogramma: ragazza con due chignon e macchie rosse sul petto accanto a un ragazzo in giacca argentata"
+   },
+   {
+    "src": "FRAME VIDEO/frame_video_Valerio_Francini5.jpg",
+    "alt": "Fotogramma in pellicola: uccello morto sulla paglia"
+   },
+   {
+    "src": "FRAME VIDEO/frame_video_Valerio_Francini7.JPG",
+    "alt": "Fotogramma: ragazzo a torso nudo con microfono e filo spinato, testo di una canzone sullo sfondo"
+   },
+   {
+    "src": "''sizefive'' magazine foto vecchie/jpg/4.jpg",
+    "alt": "Ritratto di una donna anziana con la maglia verde della nazionale dello Zambia"
+   },
+   {
+    "src": "FRAME VIDEO/frame_video_Valerio_Francini1.jpg",
+    "alt": "Fotogramma: primo piano dell'occhio di una ragazza con capelli rossi e piercing al naso"
+   }
+  ]
+ }
+]

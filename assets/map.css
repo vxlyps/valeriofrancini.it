@@ -42,6 +42,9 @@ a, button, .toggle, .yt-lite { cursor: pointer; }
     display: block;
 }
 
+/* testo solo per motori di ricerca e screen reader */
+.sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
 /* --- NODI --- */
 .node {
     position: absolute;
@@ -263,63 +266,110 @@ body.page { overflow: auto; }
 .back { font-size: 13px; text-decoration: underline; }
 .back:hover { background: var(--red); color: #fff; }
 
-/* --- PHOTO (slideshow: foto grande cliccabile + strip di thumbnails) --- */
-body.photo { overflow: auto; }
+/* --- FOTO (mappa con rami; ogni ramo apre un collage di foto piccole) ---
+   Pagina generata da tools/build-photo.py. Stessa logica della home:
+   nome al centro, rami che partono dal centro, rosso su bianco. */
+body.foto { overflow: hidden; }
+body.foto #bg { z-index: 0; }
 
-.slider-wrap {
-    position: relative;
-    z-index: 2;
-    max-width: 1100px;
-    margin: 14vh auto 0;
-    padding: 0 5vw 10vh;   /* aria per il footer fisso in fondo */
-    color: var(--red);
-}
-.slider-head { font-size: 16px; margin: 0 0 22px; }
-.slider-stage {
-    width: 100%;
-    min-height: 40vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.slide-img {
-    max-width: 100%;
-    max-height: 64vh;
-    border: 1px solid var(--red);
-    display: block;
-    cursor: pointer;              /* click = foto successiva */
-}
-.slide-ph {
-    width: 100%;
-    max-width: 620px;
-    aspect-ratio: 3 / 2;
-    border: 1px solid var(--red);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--red);
-    font-size: 12px;
-    background: repeating-linear-gradient(45deg, transparent, transparent 9px, rgba(227,6,19,0.06) 9px, rgba(227,6,19,0.06) 18px);
-}
-.slider-cap { text-transform: none; font-size: 12px; margin: 10px 0 0; min-height: 1em; text-align: center; }
-
-.thumbs {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    margin: 22px 0 0;
-}
-.thumbs img {
-    height: 54px;
-    width: auto;
-    display: block;
-    border: 1px solid var(--red);
-    opacity: 0.5;
+#f-root {
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-weight: 400;
+    text-decoration: underline;
     cursor: pointer;
 }
-.thumbs img:hover { opacity: 0.85; }
-.thumbs img.cur { opacity: 1; box-shadow: 0 0 0 2px var(--red); }
+.branch { display: contents; }
+.fb {
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    text-transform: inherit;
+    cursor: pointer;
+}
+.fb[aria-expanded="true"] { background: var(--red); color: #fff; }
+#b-vanguard  { top: 16vh; left: 12vw; }
+#b-personal  { top: 16vh; left: 74vw; }
+#b-backstage { top: 79vh; left: 12vw; }
+#b-stuff     { top: 79vh; left: 78vw; }
+
+/* collage: foto piccole fitte, righe giustificate (altezza --h calcolata da gallery.js) */
+.cluster {
+    position: absolute;
+    z-index: 3;
+    width: min(38vw, 600px);
+    background: var(--bg);
+    display: none;
+}
+.js .cluster.on { display: block; animation: cin 0.2s ease both; }
+.c-tl { top: 24vh; left: 5vw; }
+.c-tr { top: 24vh; right: 5vw; }
+.c-bl { bottom: 24vh; left: 5vw; }
+.c-br { bottom: 24vh; right: 5vw; }
+.cl {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    align-content: flex-start;
+    max-height: 54vh;
+    overflow: hidden;
+}
+.cl::after { content: ""; flex-grow: 1000000; }
+.th {
+    display: block;
+    position: relative;
+    height: var(--h, 90px);
+    flex: calc(var(--r) * 100) 1 calc(var(--r) * var(--h, 90px));
+    overflow: hidden;
+    cursor: pointer;
+}
+.th img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.th:hover, .th:focus-visible { outline: 2px solid var(--red); outline-offset: -2px; z-index: 1; }
+@keyframes cin { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+/* senza JavaScript: tutto in fila, niente mappa */
+html:not(.js) body.foto { overflow: auto; }
+html:not(.js) #f-root, html:not(.js) .fb { position: static; display: block; margin: 14px 5vw; }
+html:not(.js) .cluster { position: static; display: block; width: auto; margin: 0 5vw 24px; }
+html:not(.js) .home-link { position: static; display: block; margin: 20px 5vw 0; }
+
+/* visualizzatore (piccolo, sopra la mappa) */
+.lb {
+    position: fixed; inset: 0; z-index: 100000;
+    display: none;
+    background: rgba(255, 255, 255, 0.92);
+    text-transform: uppercase;
+}
+.lb.open { display: block; }
+.lb-box {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    max-width: 92vw;
+    background: var(--bg);
+    border: 1px solid var(--red);
+    color: var(--red);
+    font-size: 13px;
+}
+.lb-bar { display: flex; align-items: center; justify-content: space-between; gap: 18px; min-width: 300px; padding: 4px 6px 4px 12px; }
+.lb-top { border-bottom: 1px solid var(--red); }
+.lb-bot { border-top: 1px solid var(--red); }
+.lb-img { display: block; max-width: 90vw; max-height: 66vh; width: auto; height: auto; margin: 0 auto; cursor: pointer; transition: opacity 0.2s; }
+.lb.loading .lb-img { opacity: 0.2; }
+.lb-bar button {
+    background: none; border: 0; padding: 8px 10px;
+    color: var(--red); font: inherit; text-transform: uppercase;
+    cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.lb-bar button:hover, .lb-bar button:focus-visible { background: var(--red); color: #fff; outline: none; }
+.lb-title { padding: 8px 0; }
+
+@media (prefers-reduced-motion: reduce) { .js .cluster.on { animation: none; } }
 
 /* =========================================================
    MOBILE — stessa mappa con le linee, ricomposta su due
@@ -382,7 +432,15 @@ body.photo { overflow: auto; }
     .page-wrap { margin-top: 13vh; }
     .ptitle { font-size: 20px; }
 
-    .slider-wrap { margin-top: 13vh; }
-    .slide-img { max-height: 50vh; }
-    .thumbs img { height: 44px; }
+    /* foto mobile: stessa mappa, 4 rami sopra e sotto; il collage occupa il centro */
+    #f-root { font-size: 13px; }
+    #b-vanguard  { top: 14vh; left: 8vw; }
+    #b-personal  { top: 14vh; left: 66vw; }
+    #b-backstage { top: 80vh; left: 8vw; }
+    #b-stuff     { top: 80vh; left: 74vw; }
+    .cluster, .c-tl, .c-tr, .c-bl, .c-br { top: 21vh; bottom: auto; left: 4vw; right: 4vw; width: auto; }
+    .cl { max-height: 54vh; }
+    .lb-img { max-width: 94vw; max-height: 60vh; }
+    .lb-bar { min-width: 0; gap: 8px; }
+    .lb-box { max-width: 96vw; font-size: 11px; }
 }

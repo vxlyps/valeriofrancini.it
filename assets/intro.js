@@ -3,7 +3,14 @@
    SessionStorage: una sola volta per sessione.
 */
 (function () {
-    if (sessionStorage.getItem('vf_intro_shown')) return;
+    /* la decisione la prende boot.js (window.VF_SKIP_INTRO); se manca, vecchio comportamento */
+    var skipIntro;
+    try {
+        skipIntro = (typeof window.VF_SKIP_INTRO === 'boolean')
+            ? window.VF_SKIP_INTRO
+            : !!sessionStorage.getItem('vf_intro_shown');
+    } catch (e) { skipIntro = false; }
+    if (skipIntro) return;
 
     /* base path: su github.io il sito vive in /<repo>/, sul dominio custom in / */
     var VF_BASE = location.hostname.endsWith('github.io') ? '/' + location.pathname.split('/')[1] : '';
@@ -154,7 +161,26 @@
                         video.style.opacity  = '1';
                         skip.style.opacity   = '1';
                         var p = video.play();
-                        if (p && p.catch) p.catch(dismiss);
+                        if (p && p.catch) p.catch(function () {
+                            /* iPhone in risparmio energetico / autoplay bloccato:
+                               invece di saltare l'intro, aspetta un tocco (max ~5s) */
+                            loader.style.opacity = '1';
+                            video.style.opacity  = '0';
+                            pctEl.textContent = '/ tocca';
+                            pctEl.style.fontSize = 'clamp(2rem,6vw,4rem)';
+                            clearTimeout(fallback);
+                            fallback = setTimeout(dismiss, 5000);
+                            overlay.addEventListener('pointerdown', function (ev) {
+                                if (ev.target === skip) return;
+                                loader.style.opacity = '0';
+                                video.style.opacity  = '1';
+                                video.playbackRate = VIDEO_SPEED;
+                                clearTimeout(fallback);
+                                fallback = setTimeout(dismiss, 30000);
+                                var q = video.play();
+                                if (q && q.catch) q.catch(dismiss);
+                            }, { once: true });
+                        });
                         video.playbackRate = VIDEO_SPEED;
                         clearTimeout(fallback);
                         /* fallback basato sulla durata reale — evita di tagliare video lunghi */

@@ -5,3 +5,11 @@ Thumbs.db
 .idea/
 .vscode/
 node_modules/
+
+# foto ORIGINALI (pesanti, ~1 GB): restano sul Mac/Drive, non vanno online.
+# Il sito usa le versioni leggere in images/photo/ (vedi tools/build-photo.py).
+/photo/*/
+/photo/*.jpg
+/photo/*.png
+/photo/*.tif
+/photo/*.pdf

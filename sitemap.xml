@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://valeriofrancini.it/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,8 +13,257 @@
   </url>
   <url>
     <loc>https://valeriofrancini.it/photo/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/vanguard-01.jpg</image:loc>
+      <image:caption>Birds of Pray: pagina di apertura dell&#x27;editoriale su Vanguard, ritratto in bianco e nero di un modello con il cappello</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/vanguard-02.jpg</image:loc>
+      <image:caption>Birds of Pray, capitolo 3: pagine dell&#x27;editoriale su Vanguard con modelli nel bosco di notte</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/vanguard-03.jpg</image:loc>
+      <image:caption>Editoriale Vanguard Birds of Pray: due modelli in abiti trasparenti vicino a un lago al crepuscolo</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/vanguard-04.jpg</image:loc>
+      <image:caption>Editoriale Vanguard Birds of Pray: modelli in abiti neri e bianchi all&#x27;aperto, in bianco e nero</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/vanguard-05.jpg</image:loc>
+      <image:caption>Editoriale Vanguard Birds of Pray: ritratto scuro e figura in abito bianco sulla riva di un lago</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/vanguard-06.jpg</image:loc>
+      <image:caption>Editoriale Vanguard Birds of Pray: modella in abito nero in un prato e paesaggio in bianco e nero</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/personal-01.jpg</image:loc>
+      <image:caption>Ragazzo seduto sui binari del treno, fotografia analogica in bianco e nero</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/personal-02.jpg</image:loc>
+      <image:caption>Ragazzo con la macchina fotografica davanti a un canale</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/personal-03.jpg</image:loc>
+      <image:caption>Rapper con cappellino e microfono sul palco, in bianco e nero</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/personal-04.jpg</image:loc>
+      <image:caption>Ragazzo biondo seduto in un vagone della metropolitana con uno zaino rosso</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/personal-05.jpg</image:loc>
+      <image:caption>Ritratto di una ragazza con la treccia che guarda in basso, pubblicato su PhotoVogue</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/personal-06.jpg</image:loc>
+      <image:caption>Due ragazzi abbracciati di notte, uno fuma, su pellicola</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/personal-07.jpg</image:loc>
+      <image:caption>Ritratto di un ragazzo con la barba e un giaccone a righe per strada</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/personal-08.jpg</image:loc>
+      <image:caption>Cantante con cappellino che urla nel microfono tra il fumo, in bianco e nero</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/personal-09.jpg</image:loc>
+      <image:caption>Due ragazzini in piedi su una scala esterna, in bianco e nero</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/personal-10.jpg</image:loc>
+      <image:caption>Due ragazzini ripresi dal basso su una scalinata, in bianco e nero</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/personal-11.jpg</image:loc>
+      <image:caption>Silhouette di una ragazza in una stanza con luce al neon verde</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/personal-12.jpg</image:loc>
+      <image:caption>Pubblico con le braccia alzate a un concerto, in bianco e nero</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/personal-13.jpg</image:loc>
+      <image:caption>Stanza buia con graffiti e una lampadina accesa, in bianco e nero</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/personal-14.jpg</image:loc>
+      <image:caption>Ritratto in bianco e nero di un ragazzo davanti a un muro di graffiti</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/personal-15.jpg</image:loc>
+      <image:caption>Silhouette in bianco e nero di un ragazzo davanti a una finestra, pubblicata su PhotoVogue</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/personal-16.jpg</image:loc>
+      <image:caption>Ragazza bionda con i capelli sul viso in un bosco, su pellicola</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/personal-17.jpg</image:loc>
+      <image:caption>Ragazza bionda in un bosco con il sole tra gli alberi, su pellicola</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/personal-18.jpg</image:loc>
+      <image:caption>Cantante con cappellino al microfono nel buio, in bianco e nero</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/personal-19.jpg</image:loc>
+      <image:caption>Ritratto di profilo di una ragazza in un locale con luci calde, su pellicola</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/backstage-01.jpg</image:loc>
+      <image:caption>Backstage: operatore con monitor di fronte a un&#x27;attrice nella vasca da bagno</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/backstage-02.jpg</image:loc>
+      <image:caption>Backstage di un set: una ragazza nella vasca con luce rosa e un operatore con la camera</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/backstage-03.jpg</image:loc>
+      <image:caption>Backstage: operatore e performer in una stanza con luci blu e fumo</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/backstage-04.jpg</image:loc>
+      <image:caption>Backstage notturno: troupe in un sottopasso con luce gialla</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/backstage-05.jpg</image:loc>
+      <image:caption>Backstage: operatori con la camera in un sottopasso notturno, attrice a terra</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/backstage-06.jpg</image:loc>
+      <image:caption>Backstage: tre persone in un sottopasso notturno, due con le cuffie</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/backstage-07.jpg</image:loc>
+      <image:caption>Backstage di uno shooting con fondale rosa: due persone si passano una rosa</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/backstage-08.jpg</image:loc>
+      <image:caption>Backstage di un set in studio: troupe attorno a un carrello camera con luci</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/backstage-09.jpg</image:loc>
+      <image:caption>Backstage: ragazzi in posa con una videocamera in una palestra</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-01.jpg</image:loc>
+      <image:caption>Fotogramma: ragazza con fascia in testa e acchiappasogni tra luci colorate</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-02.jpg</image:loc>
+      <image:caption>Mano anziana in primo piano su una maglia giallorossa</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-03.jpg</image:loc>
+      <image:caption>Fotogramma: ragazza sdraiata in luce rossa e fumo</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-04.jpg</image:loc>
+      <image:caption>Fotogramma: ragazzo a torso nudo sdraiato in luce rossa</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-05.jpg</image:loc>
+      <image:caption>Ritratto di una persona anziana con i capelli argentati e la maglia della Roma</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-06.jpg</image:loc>
+      <image:caption>Fotogramma: ragazzo a torso nudo con il braccio sul viso su plastica rossa</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-07.jpg</image:loc>
+      <image:caption>Fotogramma: ragazzo vestito di bianco in una stanza di plastica trasparente</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-08.jpg</image:loc>
+      <image:caption>Ritratto di una persona anziana in sedia a rotelle con la maglia del Newcastle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-09.jpg</image:loc>
+      <image:caption>Fotogramma: ragazzo in bianco con le braccia alzate in una stanza di plastica</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-10.jpg</image:loc>
+      <image:caption>Fotogramma: ragazzo in bianco con la mano sul viso, sfondo di plastica</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-11.jpg</image:loc>
+      <image:caption>Ritratto ravvicinato di una donna anziana con la maglia del Lecce</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-12.jpg</image:loc>
+      <image:caption>Fotogramma: profilo di un ragazzo con gli occhi chiusi nella plastica blu</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-13.jpg</image:loc>
+      <image:caption>Fotogramma: volto di un ragazzo avvolto dalla plastica blu</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-14.jpg</image:loc>
+      <image:caption>Fotogramma: ragazzo accovacciato con un palloncino rosso su plastica bianca</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-15.jpg</image:loc>
+      <image:caption>Due persone anziane in maglia della Roma si tengono per mano in un corridoio</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-16.jpg</image:loc>
+      <image:caption>Fotogramma: ragazzo con orecchini seduto sotto un palloncino rosso</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-17.jpg</image:loc>
+      <image:caption>Fotogramma in pellicola: mano sopra l&#x27;acqua di un lago</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-18.jpg</image:loc>
+      <image:caption>Fotogramma in pellicola: croce su una collina</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-19.jpg</image:loc>
+      <image:caption>Ritratto di una donna anziana sorridente con occhiali e maglia bianconera</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-20.jpg</image:loc>
+      <image:caption>Fotogramma: occhio in primo piano in luce magenta</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-21.jpg</image:loc>
+      <image:caption>Fotogramma: ragazza che beve, incorniciata in un collage di luci</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-22.jpg</image:loc>
+      <image:caption>Fotogramma: ragazza bionda nella vasca con la mano sul viso, luce bianca</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-23.jpg</image:loc>
+      <image:caption>Donna anziana in sedia a rotelle con maglia e sciarpa del Lecce</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-24.jpg</image:loc>
+      <image:caption>Fotogramma: ragazza con due chignon e macchie rosse sul petto accanto a un ragazzo in giacca argentata</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-25.jpg</image:loc>
+      <image:caption>Fotogramma in pellicola: uccello morto sulla paglia</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-26.jpg</image:loc>
+      <image:caption>Fotogramma: ragazzo a torso nudo con microfono e filo spinato, testo di una canzone sullo sfondo</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-27.jpg</image:loc>
+      <image:caption>Ritratto di una donna anziana con la maglia verde della nazionale dello Zambia</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://valeriofrancini.it/images/photo/stuff-28.jpg</image:loc>
+      <image:caption>Fotogramma: primo piano dell&#x27;occhio di una ragazza con capelli rossi e piercing al naso</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://valeriofrancini.it/maskara/</loc>
